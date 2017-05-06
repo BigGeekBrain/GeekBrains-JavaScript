@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 1</title>
+</head>
+
+<body>
+    <p id="p"></p>
+    <button onclick="git()">Посмотреть код на GitHub.com</button>
+    <script>
+
+    function git() {
+        window.open( "https://github.com/jicool91/Java-Script/blob/master/Dmitriy%20Fevralev/Lesson%201/Celsius.html", "GitHub" );
+    }
+
+    var celsius = parseInt( prompt( "Введите температуру по Цельсию" ) );
+    var fahrenheit = ( 9 / 5 ) * celsius + 32;
+
+    var p = document.getElementById( "p" );
+    p.innerText = celsius + ' градуса(ов) по Цельсию = ' + fahrenheit + ' по Фаренгейту';
+    
+    </script>
+</body>
+
+</html>
