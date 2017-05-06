@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 1</title>
+</head>
+
+<body>
+    <button onclick="git()">Посмотреть код на GitHub.com</button>
+    <script>
+    
+    function git() {
+        window.open( "https://github.com/jicool91/Java-Script/blob/master/Dmitriy%20Fevralev/Lesson%201/luckyTiket.html", "GitHub" );
+    }
+
+    var ticket = [];
+
+    ticket = prompt( "Введите шестизначное число билетика" );
+
+    var res1 = +ticket[0] + +ticket[1] + +ticket[2];
+    var res2 = +ticket[3] + +ticket[4] + +ticket[5];
+
+    var result = res1 === res2 ? 'Вам достался счастливый билетик' : 'Неудачник!';
+    alert( result );
+    
+    </script>
+</body>
+
+</html>
