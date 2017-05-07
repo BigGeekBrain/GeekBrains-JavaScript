@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 1</title>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" id="script">
+        <button onclick="check()">check</button>
+    </form>
+    <button onclick="git()">Посмотреть код на GitHub.com</button>
+    <script>
+
+    function git() {
+        window.open( "https://github.com/jicool91/Java-Script/blob/master/Dmitriy%20Fevralev/Lesson%201/18%2B.html", "GitHub" );
+    }
+    
+    function check(value) {
+
+    	var script = document.getElementById('script').value;
+
+    	var result = script < 18 ? 'Вы входите в закрытый раздел сайта для лиц старше 18 лет' : 'Добро пожаловать!'
+
+    	alert(result);
+
+	}
+
+    </script>
+</body>
+
+</html>
