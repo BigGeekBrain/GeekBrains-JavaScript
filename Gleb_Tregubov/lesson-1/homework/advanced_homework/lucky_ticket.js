@@ -17,4 +17,4 @@ var sum1 = a1 + a2 + a3;
 var sum2 = a4 + a5 + a6;
 
 var result = sum1 == sum2 ? 'Счастливый билет' : 'Несчастливый билет';
-alert(result);
+console.log(result);
