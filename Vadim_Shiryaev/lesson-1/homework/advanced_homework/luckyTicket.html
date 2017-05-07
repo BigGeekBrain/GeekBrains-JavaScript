@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>luckyTicket</title>
+	<style>
+		form {
+			width: 350px;
+		}
+		input,
+		label,
+		button {
+			display: block;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Проверка счастливого билета</legend>
+			<label for="age">Введите номер билета: </label>
+			<input name="ticket" id="ticket" maxlength="6">
+			<button onclick="testTicket();">Отправить</button>
+		</fieldset>
+	</form>
+	<script>
+		function testTicket () {
+		var ticket = [];
+		ticket = document.getElementById("ticket").value;
+		var firstTicketsHalf = ( parseInt(ticket[0]) + parseInt(ticket[1]) + parseInt(ticket[2]) );
+		var secondTicketsHalf = ( parseInt(ticket[3]) + parseInt(ticket[4]) + parseInt(ticket[5]) );
+		var checkticket = firstTicketsHalf == secondTicketsHalf ? "You have got a lucky ticket!" : "Your ticket isn't lucky.";
+		alert(checkticket);
+		}
+	</script>
+</body>
+</html>
