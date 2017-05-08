@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Проверка возраста</title>
+	<style>
+		form {
+			width: 350px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Проверка возраста</legend>
+			<label for="age">Введите ваш возраст: </label>
+			<input type="number" min="0" max="150" name="age" id="age" value="18">
+			<button onclick="testAge();">Отправить</button>
+		</fieldset>
+	</form>
+	<script>
+		function testAge () {
+		var userAge = document.getElementById("age").value;
+		if (userAge >= 18) {
+			alert( "Вход в закрытый раздел сайта" )
+		} else {
+			alert( "Доступ в закрытый раздел сайта запрещен" )
+		}
+		}
+	</script>
+</body>
+</html>
