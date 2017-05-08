@@ -1,17 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-	<meta charset="UTF-8">
-	<title>JS Lesson 2</title>
+    <meta charset="UTF-8">
+    <title>JS Lesson 2</title>
 </head>
+
 <body>
-	
-	<script>
-		
-		
+    <script>
+    /*		
+    	var z = +prompt( 'Введите число от 0 до 15' );
 
-	</script>
+    	if ( z < 15 ) {
+    		while( z != 15 ) {
+    			z++;
+    			console.log( z );
+    		}
+    	}
+    */
+    function calc(a) {
+        var a = +prompt('Введите число от 0 до 15'),
+            b = 15,
+            res;
 
+        switch (a) {
+        	case 0:
+                res = a + 15;
+                console.log( res );
+                break;
 
+            case 1:
+                res = a * 15;
+                console.log( res );
+                break;
+
+            case 2:
+                res = a * 7 + 1;
+                console.log( res );
+                break;
+
+            case 3:
+                res = a * 5;
+                console.log( res );
+                break;
+
+            case 4:
+                res = a * 4 - 1;
+                console.log( res );
+                break;
+
+            case 5:
+                res = a * 3;
+                console.log( res );
+                break;
+
+            case 6:
+                res = a * 2 + 3;
+                console.log( res );
+                break;
+
+            case 7:
+                res = a * 2 + 1;
+                console.log( res );
+                break;
+
+            case 8:
+                res = a + 7;
+                console.log( res );
+                break;
+
+            case 9:
+                res = a + 6;
+                console.log( res );
+                break;
+
+            case 10:
+                res = a + 5;
+                console.log( res );
+                break;
+
+            case 11:
+                res = a + 4;
+                console.log( res );
+                break;
+
+            case 12:
+                res = a + 3;
+                console.log( res );
+                break;
+
+            case 13:
+                res = a + 2;
+                console.log( res );
+                break;
+
+            case 14:
+                res = a + 1;
+                console.log( res );
+                break;
+
+            case 15:
+            	res = 15;
+                console.log( res );
+                break;
+
+            default:
+            	console.log( 'Вы забыли ввести число или введенное число меньше 0 или больше 15 ' );
+
+        }
+    }
+
+    calc();
+    </script>
 </body>
+
 </html>
