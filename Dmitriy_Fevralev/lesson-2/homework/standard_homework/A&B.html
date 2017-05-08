@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Lesson 2</title>
+</head>
+<body>
+	<script>
+		
+	var a = +prompt( 'Введите число А' );
+	var b = +prompt( 'Введите число B' );
+
+	if ( a >= 0 && b >= 0 ) {
+		console.log( 'A - B = ' + ( a - b ) );
+	} else if ( a < 0 && b < 0 ) {
+		console.log( 'A * B = ' + ( a * b ) );
+	} else if ( ( a < 0 && b >= 0 ) || ( a >= 0 && b < 0 ) ) {
+		console.log( 'A + B = ' + ( a + b ) );
+	}
+
+	</script>
+</body>
+</html>
