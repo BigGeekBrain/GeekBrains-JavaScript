@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 2</title>
+</head>
+
+<body>
+    <form action="#">
+        <div>
+            <input type="text" id="num1">
+        </div>
+        <div>
+            <input type="text" id="num2">
+        </div>
+        <div>
+            <input type="text" id="num3">
+        </div>
+        <div>
+            <input type="text" id="num4">
+        </div>
+        <div>
+            <input type="text" id="result" readonly>
+        </div>
+        <button onclick="number()">
+            Рассчитать
+        </button>
+    </form>
+
+
+    <script>
+
+    	var num1 = document.getElementById( 'num1' ),
+    		num2 = document.getElementById( 'num2' ),
+    		num3 = document.getElementById( 'num3' ),
+    		num4 = document.getElementById( 'num4' ),
+    		result = document.getElementById( 'result' );
+
+    		function number() {
+    			var a = +num1.value,
+    				b = +num2.value,
+    				c = +num3.value,
+    				d = +num4.value,
+    				res;
+
+				if ( a != b && a != c && a != d ) {
+					res = 'Первое число - ' + a;
+				} else if ( b != a && b != c && b != d ) {
+					res = 'Второе число - ' + b;
+				} else if ( c != a && c != b && c != d ) {
+					res = 'Третье число - ' + c;
+				} else  if ( d != a && d != b && d != c ) {
+					res = 'Четвертое число - ' + d;
+				} else if (!Number) {
+					alert( 'Введите числа!' );
+				} else {
+					alert( 'Что-то пошло не так...' );
+				}
+
+			result.value = res;
+
+    		}
+
+    </script>
+
+
+</body>
+
+</html>
