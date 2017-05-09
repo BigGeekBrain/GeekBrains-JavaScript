@@ -1,0 +1,17 @@
+.form__block, .form__button {
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 10px;
+}
+.form__block {
+	width: 50%;
+}
+.in-form {
+	width: 100%;
+}
+button {
+	background-color: black;
+	color: white;
+	border-radius: 10px;
+	border: 2px solid black;
+}

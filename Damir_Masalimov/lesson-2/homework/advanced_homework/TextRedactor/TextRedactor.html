@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Редактор</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <form class="head-form" action="">
+        <div class="input-group">
+            <input class="in-form" type="text" id="input-string" placeholder="Введите строку текста">
+        </div>
+        <div class="input-group">
+            <button type="button" onclick="in_text()">
+                Отправить
+            </button>
+        </div>
+        <div class="input-group">
+            <button type="button" onclick="out_text()">
+                Предпросмотр
+            </button>
+        </div>
+    </form>
+    <form class="head-form" action="">
+        <div class="output-group">
+            <input class="out-form" type="text" id="output-text" placeholder="Здесь будет конечный вариант текста">
+        </div>
+        </from>
+    </form>
+    <script>
+    var full_text = '';
+
+    function in_text() {
+        var inputText = document.getElementById('input-string');
+        full_text += inputText.value;
+        full_text += '<br>';
+        inputText.value = '';
+    }
+
+    function out_text() {
+        var outputText = document.getElementById('output-text');
+        outputText.value = full_text;
+    }
+    </script>
+</body>
+
+</html>

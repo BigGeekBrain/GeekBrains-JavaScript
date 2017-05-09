@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Яблоки</title>
+</head>
+<body>
+	<form action="">
+  <div class="input-group">
+    <input type="text" id="petya" placeholder="Кол-во яблок у Пети">
+  </div>
+  <div class="input-group">
+    <input type="text" id="masha" placeholder="Кол-во яблок у Маши">
+  </div>
+  <div class="input-group">
+    <input type="text" id="dima" placeholder="Кол-во яблок у Димы" value="8">
+  </div>  
+  <div class="input-group">
+    <button type="button" onclick="apples()">
+      Рассчитать
+    </button>
+  </div>
+</form>
+<script>
+	function apples() {
+var petya = document.getElementById( 'petya' ),
+	masha = document.getElementById( 'masha' ),
+	dima = document.getElementById( 'dima' ),
+	m1,
+	n = +(petya.value),
+	m = +(masha.value),
+  r = +(dima.value);
+  
+// Если у Пети меньше яблок чем у Маши, то он отбирает у нее половину яблок, Петя перфекционист, поэтому отбирает ровно половину, без округления))
+	if ( n < m ) {
+		n += m/2;
+		m /= 2;
+	}
+	// Если у Маши меньше 5 яблок, то Дима отдает ей два яблока
+	if ( m < 5 ) {
+		m1 = m;
+		m += 2;
+		r -= 2;
+	}
+	// Петя съедает 7 яблок, либо все, если было меньше семи,
+	if ( n <= 7 ) {
+		n = 0;
+	} else {
+		n -= 7;
+	}
+	// Если у Пети больше 10 яблок, то Дима забирает 10 яблок,
+	// Если меньше 10, то Дима забирает свои два яблока у Маши.
+	if ( n>= 10 ) {
+		n -= 10;
+		r += 10;
+	} else if ( m1 < 5 ) {
+		m -= 2;
+		r += 2;
+	}
+  console.log ( 'У Пети', n, 'яблок');
+  console.log ( 'У Маши', m, 'яблок');
+  console.log ( 'У Димы', r, 'яблок');
+}
+</script>
+</body>
+</html>

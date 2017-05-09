@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Игра в вопросы</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <form action="" class="form1">
+        <div class="form__block">
+            <input type="text" class="in-form" id="in-form1" placeholder="Висит груша, нельзя скушать!">
+        </div>
+        <div class="form__button">
+            <button type="button" onclick="button1()">
+                Ответить
+            </button>
+        </div>
+    </form>
+    <form action="" class="form2">
+        <div class="form__block">
+            <input type="text" class="in-form" id="in-form2" placeholder="Зимой и летом одним цветом!">
+        </div>
+        <div class="form__button">
+            <button type="button" onclick="button2()">
+                Ответить
+            </button>
+        </div>
+    </form>
+    <form action="" class="form3">
+        <div class="form__block">
+            <input type="text" class="in-form" id="in-form3" placeholder="Кто его раздевает, тот слезы проливает!">
+        </div>
+        <div class="form__button">
+            <button type="button" onclick="button3()">
+                Ответить
+            </button>
+        </div>
+    </form>
+    <form action="" class="form4">
+        <div class="form__block">
+            <input type="text" class="in-form" id="in-form4" placeholder="Сто одежек и все без застежек!">
+        </div>
+        <div class="form__button">
+            <button type="button" onclick="button4()">
+                Ответить
+            </button>
+        </div>
+    </form>
+    <form action="" class="form4">
+        <div class="form__block">
+            <input type="text" class="in-form" id="otvet" value="Здесь будет количество правильных ответов, когда закончите!" disabled="1">
+        </div>
+    </form>
+    <script>
+    var otvet_sum = 0,
+        true_sum = 0,
+        otvet1 = document.getElementById('in-form1'),
+        otvet2 = document.getElementById('in-form2'),
+        otvet3 = document.getElementById('in-form3'),
+        otvet4 = document.getElementById('in-form4'),
+        otvet = document.getElementById('otvet');
+
+    function button1() {
+        if (otvet1.value == 'Лампочка') {
+            ++true_sum;
+        }
+        otvet1.disabled = 1;
+        ++otvet_sum;
+        if (otvet_sum === 4) {
+            otvet.value = true_sum;
+        }
+    }
+
+    function button2() {
+        if (otvet2.value == 'Елка') {
+            ++true_sum;
+        }
+        otvet2.disabled = 1;
+        ++otvet_sum;
+        if (otvet_sum === 4) {
+            otvet.value = true_sum;
+        }
+    }
+
+    function button3() {
+        if (otvet3.value == 'Лук') {
+            ++true_sum;
+        }
+        otvet3.disabled = 1;
+        ++otvet_sum;
+        if (otvet_sum === 4) {
+            otvet.value = true_sum;
+        }
+    }
+
+    function button4() {
+        if (otvet4.value == 'Капуста') {
+            ++true_sum;
+        }
+        otvet4.disabled = 1;
+        ++otvet_sum;
+        if (otvet_sum === 4) {
+            otvet.value = true_sum;
+        }
+    }
+    </script>
+</body>
+
+</html>
