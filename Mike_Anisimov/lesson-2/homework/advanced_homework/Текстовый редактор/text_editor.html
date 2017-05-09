@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Текстовый редактор</title>
+</head>
+<body>
+	<div class="form">
+		<form action="">
+	<div>
+		<input type="text" id="textstring">
+	</div>
+	<div>
+		<input type="reset" value = "Отправить" onClick="savedata()">
+		<input type="button" value = "Предпросмотр" onClick="review()">
+	</div>
+		</form>
+	</div>
+	<div class="form" id="form2">
+
+	</div>
+	<script>
+		var text = '';
+		var newline='\r';
+
+		function savedata() {
+			text = text + document.getElementById('textstring').value + newline;
+  			alert(text);
+		}
+
+		function review() {
+			alert(text);
+		var formdata = document.getElementById('form2');
+		formdata.innerHTML = text;
+}
+
+	</script>
+</body>
+</html>

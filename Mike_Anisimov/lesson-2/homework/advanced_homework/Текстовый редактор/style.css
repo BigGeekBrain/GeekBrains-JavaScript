@@ -1,0 +1,13 @@
+.form {
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+
+#form2 {
+  position: absolute;
+  top:0;
+  right: 0;
+}
+
+
