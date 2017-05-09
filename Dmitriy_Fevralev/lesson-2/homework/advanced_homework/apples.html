@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<form action="">
+<form action="#">
     <div>
         <input type="text" id="petr" placeholder="Сколько яблок у Петра ?">
     </div>
@@ -15,7 +15,7 @@
         <input type="text" id="maria" placeholder="Сколько яблок у Марии?">
     </div>
     <div>
-        <input type="text" id="dima" readonly>
+        <input type="text" id="dima" readonly placeholder="У Димы 8 яблок">
     </div>
     <div>
         <input type="text" id="resPetr" readonly>
@@ -26,13 +26,67 @@
     <div>
         <input type="text" id="resDima" readonly>
     </div>
-    <button>
+    <button onclick="calc()">
     	Рассчитать
     </button>
 </form>
 
 
     <script>
+
+    	var petr = document.getElementById( 'petr' ),
+    		maria = document.getElementById( 'maria' ),
+    		dima = 8,
+    		resPetr = document.getElementById( 'resPetr' ),
+    		resMaria = document.getElementById( 'resMaria' ),
+    		resDima = document.getElementById( 'resDima' );
+    		
+    	function calc() {
+
+    		var n = +petr.value,
+    			m = +maria.value,
+    			d = +dima,
+    			resN,
+    			resM,    			
+    			resD,
+    			res;
+
+    		if ( n < m ) {
+    			m = m / 2;
+
+    			if ( m <= 5 ) {
+				m += 2;
+				d -= 2;
+					if ( n >= 7 && n < 10 ) {
+						n -= 7;
+					} else if ( n >= 10 ) {
+						n -= 10;
+						d += 10;
+					} else if ( n < 7 ) {
+						m -= 2;
+						d += 2;
+					} else {
+						alert( 'Все яблоки съели' );
+					} 
+
+				} else {
+					alert( 'Все яблоки съели' );
+				} 
+
+    		} else {
+				alert( 'Все яблоки съели' );
+			} 
+
+			
+
+			
+
+    		resDima.value = 'У Димы осталось ' + d + ' яблок';
+    		resMaria.value = 'У Маши осталось ' + m + ' яблок';
+    		resPetr.value = 'У Петра осталось ' + n + ' яблок';
+
+    	}
+
 
     </script>
 
