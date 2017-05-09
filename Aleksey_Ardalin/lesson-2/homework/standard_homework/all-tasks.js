@@ -134,13 +134,13 @@ function subs( x, y ) {
 */
 
 
+var operation,
+  add,
+  divide,
+  mult,
+  subs;
 
 function mathOperation( arg1, arg2, operation ) {
-  var operation,
-    add,
-    divide,
-    mult,
-    subs;
   switch ( operation ) {
     case "add":
       return arg1 + arg2;
@@ -160,8 +160,7 @@ function mathOperation( arg1, arg2, operation ) {
   }
 }
 
-console.log( mathOperation( 5, 1, "mult" ) ); // не успел пока разобраться, всё время сложение получается
-
+console.log( mathOperation( 5, 1, "mult" ) );
 
 
 /*
