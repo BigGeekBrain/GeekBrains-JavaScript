@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Статистика посещения сайта</title>
+</head>
+<body>
+
+<form action="">
+  <div>
+  <label for="time">Введите время, проведённое на сайте (в секундах)
+    <input type="number" min="0" id="time">
+  </label>
+  </div>
+  <div>
+  <input type="button" value="Подсчитать" onClick="visits()">
+  </div>
+</form>
+
+<script>
+	var count = 0,
+       reject = 0,
+            views = 0,
+                attention = 0,
+                		panels = 0;
+    
+function visits() {
+	var time = +document.getElementById('time').value;
+	count++;
+	if (time < 10)
+		reject++;
+    
+	else if ( (time >= 10) && ( time <= 60 ) ) {
+		views++;
+    	attention++;
+	} 
+
+	else {
+		views++;
+    	panels++;
+	}
+alert("Общее количество подключений: " +count + ".");
+alert("Количество отказов: " + reject + ", процент отказов: " +parseInt( ( reject / count ) * 100 )+"%.");
+alert("Количество посещений: " + views + ", процент посещений: " +parseInt( ( views / count ) * 100 ) + "%.");
+alert("Количество внимательного изучения: " + attention + ", процент внимательного изучения: " +parseInt( ( attention / count ) * 100 ) + "%.");
+alert("Количество незакрытых вкладок: " + panels + ", процент незакрытых вкладок: " +parseInt( ( panels / count ) * 100 ) + "%.");
+}
+	
+		
+</script>
+	
+</body>
+</html>
