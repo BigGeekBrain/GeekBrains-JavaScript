@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Lesson 1</title>
+</head>
+<body>
+	
+<script>
+	
+function calc( a ) {
+	var a = +prompt( 'Введите число от 1 до 999' ),
+		res;
+
+		if ( a >= 10 && a <= 99) {
+			res = ( a % 2 == 0 ) ? console.log( 'Двузначное четное' ) : console.log( 'Двузначное нечетное' );
+		} else if ( a > 99 && a <= 999 ) {
+			res = a % 2 == 0 ? console.log( 'Трехзначное четное' ) : console.log( 'Трехзначное нечетное' );
+		} else if ( a >= 1 && a < 10 ) {
+			res = a % 2 == 0 ? console.log( 'Однозначное четное' ) : console.log( 'Однозначное нечетное' );
+		} else {
+			console.log( 'Что-то пошло не так' );
+		}
+}
+
+calc();
+
+</script>
+
+</body>
+</html>
