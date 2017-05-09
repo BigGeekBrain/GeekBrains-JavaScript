@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Отгадай загадки</title>
+</head>
+<body>
+
+<div>
+<label for="question1" id="label1">Вопрос 1: Зимой и летом одним цветом<br>
+  <input type="text" id="question1">
+  </label>
+<input type="button" value="Отправить" onclick="checkAnswer('question1')">
+</div>
+<div>
+<label for="question2" id="label2"><br> Вопрос 2: Семь одёжек и все без застёжек<br>
+  <input type="text" id="question2">
+</label>
+<input type="button" value="Отправить" onclick="checkAnswer('question2')">
+</div>
+<div>
+<label for="question3" id="label3"><br>Вопрос 3: Два кольца, а посередине гвоздик<br>
+  <input type="text" id="question3">
+</label>
+<input type="button" value="Отправить" onclick="checkAnswer('question3')">
+</div>
+<div>
+<label for="question4" id="label4"><br>Вопрос 4: Без окон, без дверей, полна горница людей<br>
+  <input type="text" id="question4">
+</label>
+<input type="button" value="Отправить" onclick="checkAnswer('question4')">
+</div>
+<div><br>
+  <input type="button" value="Узнать результаты" onclick="getResults()">
+</div>
+<div id="results"></div>
+
+<script>
+	var answer1,
+			answer2,
+      	answer3,
+        	answer4;         
+
+function checkAnswer(id) {
+switch (id) {
+		case 'question1':
+    		answer1 = document.getElementById(id).value;
+        document.getElementById('label1').innerHTML = "Вопрос 1: Зимой и летом одним цветом<br><input type='text' disabled placeholder="+answer1+">";
+        break;
+    case 'question2':
+    		answer2 = document.getElementById(id).value;
+        document.getElementById('label2').innerHTML = "<br> Вопрос 2: Семь одёжек и все без застёжек<br><input type='text' disabled placeholder="+answer2+">";
+        break;
+    case 'question3':
+    		answer3 = document.getElementById(id).value;
+        document.getElementById('label3').innerHTML = "<br>Вопрос 3: Два кольца, а посередине гвоздик<br><input type='text' disabled placeholder="+answer3+">";
+        break;
+    case 'question4':
+    	  answer4 = document.getElementById(id).value;
+        document.getElementById('label4').innerHTML = "<br>Вопрос 4: Без окон, без дверей, полна горница людей<br><input type='text' disabled placeholder="+answer4+">";
+        break;
+        }
+}
+
+function getResults() {
+var fails = 0,
+		 bingos = 0;
+     
+     if (answer1 == "Ёлка")
+     	bingos++;
+      else 
+      	fails++;
+        
+        if (answer2 == "Капуста")
+     	bingos++;
+      else 
+      	fails++;
+        
+        if (answer3 == "Ножницы")
+     	bingos++;
+      else 
+      	fails++;
+        
+        if (answer4 == "Огурец")
+     	bingos++;
+      else 
+      	fails++;
+        
+      document.getElementById('results').innerHTML="Правильных ответов: "+bingos+ "<br> Неправильных ответов: "+fails;
+        
+}
+</script>
+	
+</body>
+</html>
