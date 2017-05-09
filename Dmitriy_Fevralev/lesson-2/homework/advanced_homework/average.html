@@ -18,7 +18,7 @@
     <div>
         <input type="text" id="result" readonly>
     </div>
-    <button onclick="calc()">
+    <button onclick="average()">
     	Рассчитать
     </button>
 </form>
@@ -33,7 +33,7 @@
 	function average() {
 		var a = +num1.value,
 			b = +num2.value,
-			c = +num3,value,
+			c = +num3.value,
 			res;
 
 		if ( ( a > b && a < c ) || ( a < b && a > c ) ) {
@@ -46,7 +46,7 @@
 			res = 'Вы указали неверные числа';
 		}
 
-	result = res;
+	result.value = 'Среднее число ' + res;
 
 	}
 
