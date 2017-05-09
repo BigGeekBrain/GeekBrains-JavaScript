@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Lesson 2</title>
+</head>
+<body>
+	<form action="#">
+    <div>
+        <input type="text" id="num1">
+    </div>
+    <div>
+        <input type="text" id="num2">
+    </div>
+    <div>
+        <input type="text" id="num3">
+    </div>
+    <div>
+        <input type="text" id="result" readonly>
+    </div>
+    <button onclick="calc()">
+    	Рассчитать
+    </button>
+</form>
+
+<script>
+	
+	var num1 = document.getElementById( 'num1' ),
+		num2 = document.getElementById( 'num2' ),
+		num3 = document.getElementById( 'num3' ),
+		result = document.getElementById( 'result' );
+
+	function average() {
+		var a = +num1.value,
+			b = +num2.value,
+			c = +num3,value,
+			res;
+
+		if ( ( a > b && a < c ) || ( a < b && a > c ) ) {
+			res = a;
+		} else if ( ( b > a && b < c ) || ( b < a && b > c ) ) {
+			res = b;
+		} else if ( ( c > a && c < b ) || ( c < a && c > b ) ) {
+			res = c;
+		} else {
+			res = 'Вы указали неверные числа';
+		}
+
+	result = res;
+
+	}
+
+</script>
+
+</body>
+</html>
