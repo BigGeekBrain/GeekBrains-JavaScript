@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Среднее число</title>
+</head>
+<body>
+
+<form action="">
+  <p>Введите 3 числа</p>
+  <div>
+    <label for="num1">Введите число 1
+      <input type="number" id ="num1">
+    </label>
+  </div>
+  
+    <div>
+    <label for="num2">Введите число 2
+      <input type="number" id ="num2">
+    </label>
+  </div>
+  
+    <div>
+    <label for="num3">Введите число 3
+      <input type="number" id ="num3">
+    </label>
+  </div>
+  <div>
+    <input type="button" value="Рассчитать" onClick="middle()">
+  </div>
+</form>
+
+<script>
+	function middle() {
+
+		var num1 = +document.getElementById('num1').value;
+		var num2 = +document.getElementById('num2').value;
+		var num3 = +document.getElementById('num3').value;
+
+		var min,
+					max,
+        				middle;
+
+		if ( ( num1 > num2 ) && ( num1 > num3 ) ) {
+					max = num1;
+		} 
+
+		else if  ( ( num2 > num1 ) && ( num2 > num3 ) ) {
+					max = num2;
+		}
+
+		else {
+				max = num3;
+		} 
+
+		if ( ( num1 < num2 ) && ( num1 < num3 ) ) {
+					min = num1;
+		} 
+
+		else if  ( ( num2 < num1 ) && ( num2 < num3 ) ) {
+					min = num2;
+		}
+
+		else {
+				min = num3;
+		} 
+
+		if ( ( num1 > min ) && ( num1 < max ) ) {
+					middle = num1;
+		} 
+
+		else if  ( ( num2 > min ) && ( num2 < max) ) {
+					middle = num2;
+		}
+
+		else {
+				middle = num3;
+		} 
+
+		if ( ( middle == min ) && ( middle == max ) ) {
+				console.log("Совпадение чисел")
+		}
+		else {
+			console.log("Среднее число между " +min + " и " +max + " равно " +middle);
+		}
+	}
+</script>
+	
+</body>
+</html>
