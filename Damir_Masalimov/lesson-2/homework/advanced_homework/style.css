@@ -1,0 +1,17 @@
+.head-form {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 45%;
+	vertical-align: top;
+}
+.input-group {
+	display: inline-block;
+	box-sizing: border-box;
+}
+.input-group button {
+	margin: 10px;
+}
+.in-form {
+	width: 20px;
+	padding: 3px;
+}
