@@ -5,6 +5,36 @@
 	<title>JS Lesson 2</title>
 </head>
 <body>
+
+<form action="#">
+
+	<input type="text" id="text"><br>	
+	<button onclick="enter()">Отправить</button>
+	<button onclick="conclusion()">Предпросмотр</button>
+</form>	
+<div>
+	<p id="p"></p>
+</div>
 	
+<script>
+	
+	
+	var	p = document.getElementById( 'p' ),
+		result1,
+		result2;
+			
+
+	var enter = function func1() {	
+		var text = document.getElementById( 'text' ).value,		
+			result1 = text;
+			console.log(result1);
+			return result1;
+		}
+
+	 var save = enter();
+	 console.log( save );
+</script>
+
+
 </body>
 </html>
