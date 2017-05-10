@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Посещения сайта</title>
+</head>
+<body>
+	<input type="number" placeholder="Введите время посещения" id="time">
+<button type="button" onclick="visit()">Посетить</button>
+<div id="status">
+  <div>
+    Количество посещений: <span id="visits_count">0</span>
+  </div>
+  <div style="margin-left: 15px;">
+    С внимательным изучением: <span id="attent_count">0</span>
+  </div>
+  <div style="margin-left: 15px;">
+    Забыли закрыть вкладку: <span id="unclose_count">0</span>
+  </div>
+  <div>
+    Количество отказов: <span id="rejects_count">0</span>
+  </div>
+</div>
+<script>
+	var total_count = 0,
+	visits_count = 0,
+	rejects_count = 0,
+  attent_count = 0,
+  unclose_count = 0,
+  visits_element = document.getElementById( 'visits_count' ),
+  attent_element = document.getElementById( 'attent_count' ),
+  unclose_element = document.getElementById( 'unclose_count' ),
+  rejects_element = document.getElementById( 'rejects_count' );
+		
+function visit() {
+	total_count++;
+  var time = +document.getElementById( 'time' ).value;
+  
+  if (time < 10) {
+  	rejects_count++;
+  }
+  else {
+  	visits_count++;
+    if ( time < 3600 ) {
+    attent_count++;
+    } else {
+    unclose_count++;
+    }
+  }
+  
+  visits_element.innerHTML = visits_count + ' (' + ( visits_count * 100 / total_count ).toFixed( 2 ) + '%)';
+  attent_element.innerHTML = attent_count + ' (' + ( attent_count * 100 / visits_count ).toFixed( 2 ) + '%)';
+  unclose_element.innerHTML = unclose_count + ' (' + ( unclose_count * 100 / visits_count ).toFixed( 2 ) + '%)';
+  rejects_element.innerHTML = rejects_count + ' (' + ( rejects_count * 100 / total_count ).toFixed( 2 ) + '%)';
+}
+</script>
+</body>
+</html>
