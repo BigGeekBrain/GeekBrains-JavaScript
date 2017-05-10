@@ -23,25 +23,29 @@
             </button>
         </div>
     </form>
-    <form class="head-form" action="">
+    <!-- <form class="head-form" action="">
         <div class="output-group">
             <input class="out-form" type="text" id="output-text" placeholder="Здесь будет конечный вариант текста">
         </div>
         </from>
-    </form>
+    </form> -->
+    <div class="head-form output-group">
+        <span id="output-text"></span>
+    </div>
     <script>
-    var full_text = '';
+    var full_text = '',
+        outputText = document.getElementById( 'output-text' );
 
     function in_text() {
-        var inputText = document.getElementById('input-string');
+        var inputText = document.getElementById( 'input-string' );
         full_text += inputText.value;
         full_text += '<br>';
         inputText.value = '';
     }
 
     function out_text() {
-        var outputText = document.getElementById('output-text');
-        outputText.value = full_text;
+        outputText.innerHTML = full_text;
+        // outputText.value = full_text;
     }
     </script>
 </body>
