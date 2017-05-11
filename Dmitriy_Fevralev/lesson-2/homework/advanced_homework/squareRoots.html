@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 2</title>
+</head>
+
+<body>
+    <div id="group">
+        <div>
+            <input type="text" id="firstNumber">
+        </div>
+        <div>
+            <input type="text" id="secondNumber">
+        </div>
+        <div>
+            <input type="text" id="thirdNumber">
+        </div>
+        <div>
+            <button id="button" onclick="squareRoots()">Посчитать</button>
+        </div>
+    </div>
+    <script>
+    // y = Math.pow( a * x , 2 ) + bx + c;
+    // D = pow( b, 2 ) - ( 4 * a * c );
+    var num1 = document.getElementById( 'firstNumber' ),
+        num2 = document.getElementById( 'secondNumber' ),
+        num3 = document.getElementById( 'thirdNumber' );
+
+    function squareRoots(a, b, c) {
+        var a = +num1.value,
+            b = +num2.value,
+            c = +num3.value,
+            x1,
+            x2;
+
+        D = Math.pow( b, 2 ) - ( 4 * a * c );
+        x1 = ( ( -( b ) + Math.sqrt( D ) ) / ( 2 * a ) );
+        x2 = ( ( -( b ) - Math.sqrt( D ) ) / ( 2 * a ) );
+        console.log( x1.toFixed( 0 ) + ' ' + x2.toFixed( 0 ) );
+    }
+    </script>
+</body>
+
+</html>
