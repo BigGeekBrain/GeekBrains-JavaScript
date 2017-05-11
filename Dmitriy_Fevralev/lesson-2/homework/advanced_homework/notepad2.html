@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="input-group">
+        <div>
+            <input type="text" id="text">
+        </div>
+        <div>
+            <button onclick="send()">
+                Отправить
+            </button>
+            <button onclick="preview()">
+                Показать записи
+            </button>
+        </div>
+    </div>
+    <div id="result">
+    </div>
+    <script>
+    var text_element = document.getElementById('text'),
+        result = document.getElementById('result'),
+        res_text;
+
+    function send() {
+        if (res_text === undefined) {
+            res_text = text_element.value + "<br>";
+        } else {
+            res_text += text_element.value + "<br>";
+        }
+        text_element.value = "";
+    }
+
+    function preview() {
+        result.innerHTML = "<p>" + res_text + "</p>";
+    }
+    </script>
+</body>
+
+</html>
