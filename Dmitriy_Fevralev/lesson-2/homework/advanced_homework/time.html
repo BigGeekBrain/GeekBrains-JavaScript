@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-	<meta charset="UTF-8">
-	<title>JS Lesson 2</title>
+    <meta charset="UTF-8">
+    <title>JS Lesson 2</title>
 </head>
+
 <body>
+    <form action="#">
+        <input type="number" placeholder="Введите время посещения" id="time">
+        <button type="button" onclick="visit()">Посетить</button>
+        <div id="status">
+            <div>
+                Количество посещений: <span id="visits_count">0</span>
+            </div>
+            <div>
+                Количество отказов: <span id="rejects_count">0</span>
+            </div>
+            <div>
+                Количество и процент незакрытых вкладок: <span id="not_closed">0</span>
+            </div>
+        </div>
+    </form>
+    <div>
+        <p id="p"></p>
+    </div>
+    <script>
+    var total_count = 0,
+        visits_count = 0,
+        rejects_count = 0,
+        not_closed = 0,
+        visits_element = document.getElementById('visits_count'),
+        rejects_element = document.getElementById('rejects_count'),
+        not_closed_element = document.getElementById('not_closed'),
+        result = document.getElementById('result');
 
-<form action="#">
+    function visit() {
+        total_count++;
+        var time = +document.getElementById('time').value;
 
-	<input type="text" id="text"><br>	
-	<button onclick="enter()">Отправить</button>
-	<button onclick="conclusion()">Предпросмотр</button>
-</form>	
-<div>
-	<p id="p"></p>
-</div>
-	
-<script>
-	
-	
-	var	p = document.getElementById( 'p' ),
-		result1,
-		result2;
-			
+        if (time < 10) {
+            rejects_count++;
+        } else if (time >= 10 && time < 3600) {
+            visits_count++;
+        } else if (time >= 3600) {
+            not_closed++;
+        }
 
-	var enter = function func1() {	
-		var text = document.getElementById( 'text' ).value,		
-			result1 = text;
-			console.log(result1);
-			return result1;
-		}
+        visits_element.innerHTML = visits_count + '(' + (visits_count * 100 / total_count).toFixed(2) + '%)';
+        rejects_element.innerHTML = rejects_count + ' (' + (rejects_count * 100 / total_count).toFixed(2) + '%)';
+        not_closed_element.innerHTML = not_closed + '(' + (not_closed * 100 / total_count).toFixed(2) + '%)';
 
-	 var save = enter();
-	 console.log( save );
-</script>
-
-
+    }
+    </script>
 </body>
+
 </html>
