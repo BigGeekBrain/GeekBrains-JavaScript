@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Квадратное уравнение</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <form class="head-form" action="">
+        <div class="input-group">
+            <input class="in-form" type="text" id="koef_a" placeholder="a">
+        </div>
+        <span>x<sup>2</sup>+</span>
+        <div class="input-group">
+            <input class="in-form" type="text" id="koef_b" placeholder="b">
+        </div>
+        <span>x+</span>
+        <div class="input-group">
+            <input class="in-form" type="text" id="koef_c" placeholder="c">
+        </div>
+        <span>= 0</span>
+        <div class="input-group">
+            <button type="button" onclick="squareRoots()">
+                Решить
+            </button>
+        </div>
+        <div class="output-group">
+            <span id="result"></span>
+        </div>
+    </form>
+    <script>
+    var result = document.getElementById( 'result' );
+
+    function squareRoots() {
+        var a = +document.getElementById( 'koef_a' ).value,
+            b = +document.getElementById( 'koef_b' ).value,
+            c = +document.getElementById( 'koef_c' ).value,
+            x1_input,
+            x2_input,
+            diskr = b * b - 4 * a * c;
+
+        if ( diskr > 0 ) {
+            x1_input = ( ( -1 * b + Math.sqrt( diskr ) ) / ( 2 * a ) ).toFixed( 2 );
+            x2_input = ( ( -1 * b - Math.sqrt( diskr ) ) / ( 2 * a ) ).toFixed( 2 );
+        } else if ( diskr === 0 ) {
+            x1_input = ( ( -1 * b ) / ( 2 * a ) ).toFixed( 2 );
+            x2_input = x1_input;
+        } else {
+            x1_input = ( -1 * b ) / ( 2 * a );
+            x2_input = ( -1 * b ) / ( 2 * a );
+            var mnim = Math.sqrt(-1 * diskr) / ( 2 * a );
+            x1_input = x1_input.toFixed( 2 ) + '+' + mnim.toFixed( 2 ) + 'i';
+            x2_input = x2_input.toFixed( 2 ) + '-' + mnim.toFixed( 2 ) + 'i';
+        }
+        result.innerHTML = 'Первый корень: ' + x1_input + '<br>Второй корень: ' + x2_input;
+    }
+    </script>
+</body>
+
+</html>
