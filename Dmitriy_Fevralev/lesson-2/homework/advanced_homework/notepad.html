@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 2</title>
+</head>
+
+<body>
+    <div class="input-group">
+        <div>
+            <input type="text" id="text">
+        </div>
+        <div>
+            <input type="submit" onclick="send()">
+        </div>
+    </div>
+    <div id="result">
+    </div>
+    <script>
+    var text_element = document.getElementById('text'),
+        result = document.getElementById('result'),
+        text_save;
+
+
+    function send() {
+        if (text_save === undefined) {
+            text_save = text_element.value + '<br>';
+
+        } else {
+            text_save += text_element.value + '<br>';
+        }
+
+
+
+        text_element.value = "";
+        result.innerHTML = "<p>" + text_save + "</p>";
+    }
+    </script>
+</body>
+
+</html>
