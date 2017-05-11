@@ -22,7 +22,6 @@
         result = document.getElementById('result'),
         text_save;
 
-
     function send() {
         if (text_save === undefined) {
             text_save = text_element.value + '<br>';
@@ -30,8 +29,6 @@
         } else {
             text_save += text_element.value + '<br>';
         }
-
-
 
         text_element.value = "";
         result.innerHTML = "<p>" + text_save + "</p>";
