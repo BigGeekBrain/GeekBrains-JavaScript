@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 2</title>
+</head>
+
+<body>
+    <div class="group">
+        <div>
+            <input type="text" id="answer1" placeholder="Сколько будет 2 + 2 = ?">
+            <button id="check1" onclick="check1()">Проверить ответы</button>
+        </div>
+        <div>
+            <input type="text" id="answer2" placeholder="Сколько будет 3 + 3 = ?">
+            <button id="check2" onclick="check2()">Проверить ответы</button>
+        </div>
+        <div>
+            <input type="text" id="answer3" placeholder="Сколько будет 4 + 4 = ?">
+            <button id="check3" onclick="check3()">Проверить ответы</button>
+        </div>
+        <div>
+            <input type="text" id="answer4" placeholder="Сколько будет 5 + 5 = ?">
+            <button id="check4" onclick="check4()">Проверить ответы</button>
+        </div>
+    </div>
+    <button onclick="check()">Получить результат теста</button>
+    <div id="result">Здесь будет результат</div>
+    <script>
+    var answer1 = document.getElementById('answer1'),
+        answer2 = document.getElementById('answer2'),
+        answer3 = document.getElementById('answer3'),
+        answer4 = document.getElementById('answer4'),
+        result1 = 0,
+        result2 = 0;
+
+    function check1() {
+        var num1 = +answer1.value;
+        if (document.getElementById('check1').click = true) {
+            answer1.disabled = true;
+            if (num1 === 4) {
+            	answer1.style.borderColor = '#0CF772';
+                result1++;
+            } else {
+            	answer1.style.borderColor = '#F70C1C';
+                result2++;
+            }
+        }
+
+    }
+
+    function check2() {
+        var num2 = +answer2.value;
+        if (document.getElementById('check2').click = true) {
+            answer2.disabled = true;
+            if (num2 === 6) {
+            	answer2.style.borderColor = '#0CF772';
+                result1++;
+            } else {
+            	answer2.style.borderColor = '#F70C1C';
+                result2++;
+            }
+        }
+    }
+
+    function check3() {
+        var num3 = +answer3.value;
+        if (document.getElementById('check3').click = true) {
+            answer3.disabled = true;
+            if (num3 === 8) {
+            	answer3.style.borderColor = '#0CF772';
+                result1++;
+            } else {
+            	answer3.style.borderColor = '#F70C1C';
+                result2++;
+            }
+        }
+    }
+
+    function check4() {
+        var num4 = +answer4.value;
+        if (document.getElementById('check4').click = true) {
+            answer4.disabled = true;
+            if (num4 === 10) {
+            	answer4.style.borderColor = '#0CF772';
+                result1++;
+            } else {
+            	answer4.style.borderColor = '#F70C1C';
+                result2++;
+            }
+        }
+    }
+
+    function check() {
+        var result = document.getElementById('result');
+        result.innerHTML = '<p>Количество правильных ответов : ' + result1 + '<br>';
+        result.innerHTML += 'Количество неправильных ответов: ' + result2;
+    }
+
+    </script>
+</body>
+
+</html>
