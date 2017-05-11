@@ -1,0 +1,120 @@
+/*	################################################################
+Theme Name: Frot'o
+Theme URI: http://www.revoltheme.com/
+Author URI: http://www.zobayer.com/
+Description: Easy Docs 100% Responsive, Highly Customizable, Unlimited color schemes and SEO Friendly Theme using Twitter Bootstrap, specially designed for WordPress Marketplace Plugin ( http://wordpress.org/plugins/wpmarketplace/ ). If you want to build a full featured eshop or online marketplace, this theme and wp marketplace plugin could be a perfect choice for you, but still you can use this for for you personal blog site too, as Crypton has also all regular features like gallery, audio, video, chat and other post format support, archive pages, page with side bar, blog page to build your blog site. This theme is will make your website adaptable with any type of devices. Theme Features: WP Marketplace Plugin Support ,Custom Homepage Settings, 3 Page Templates, Custom Background Support, Unlimited Color Schemes, Search Engine Friendly.
+Author: Shah Zobayer Ahmed
+Version: 1.0.0
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: black, green, white, two-columns, fixed-width, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, custom-background, post-formats
+
+################################################################# */
+
+/* --- BACKGROUND  --------------------- */
+::-moz-selection {
+  background-color: #cd2f2e;
+  color: #fff;
+}
+::-webkit-selection {
+  background-color: #cd2f2e;
+  color: #fff;
+}
+::-o-selection {
+  background-color: #cd2f2e;
+  color: #fff;
+}
+::-khtml-selection {
+  background-color: #cd2f2e;
+  color: #fff;
+}
+::-ms-selection {
+  background-color: #cd2f2e;
+  color: #fff;
+}
+::selection {
+  background-color: #cd2f2e;
+  color: #fff;
+}
+
+/* placeholder */
+::-webkit-input-placeholder {
+    color: #cd2f2e !important;
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #cd2f2e !important;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #cd2f2e !important;
+}
+:-ms-input-placeholder {
+    color: #cd2f2e !important;
+}
+
+/* ALL SELECTOR BACKGROUND */
+.carousel-caption > a, .fixed, .section-title > h1:after, .section-title > h1:before, .about-item a.icon:hover:before, .about-item:hover a.icon:before
+.about-item a.icon:hover:after, .about-item:hover a.icon:after, .meet-section, .about-item a.icon:hover:after, .about-item:hover a.icon:after, .about-item a.icon:hover:before, .about-item:hover a.icon:before,
+.service-item h2:hover:before, .service-item:hover h2:before, .service-item h2:hover:after, .service-item:hover h2:after,.quote-navigation a i,
+.quote-title > h1:after, .quote-title > h1:before, .button-group > li.active:before, .button-group > li.active:after, .button-group > li:hover:before,
+.button-group > li:hover:after, .work-content,.work-content > .work-caption > .work-caption-details > p > a:hover,.client-item > a,.client-navigation a i,
+.testimonial-details,.testimonial-navigation a i,.team-area,.team-social > li > a:hover i, .skillst1 .skillbar,.counter-area:hover .counter:after,
+.follow-us-section,.social-follow > ul > li > a:hover > i, .post-author,.news-post-content > a, .load-more-btn,.contact-area .contact-submit,
+#easy-top:hover
+{
+    background: #cd2f2e
+}
+
+
+/* NICE SCROLL BAR BACKGROUND */
+.nicescroll-cursors{
+    background: #cd2f2e !important
+}
+
+/* ALL SELECTOR COLOR */
+.carousel-caption > h1 > span, .carousel-caption > h2 > span,.navbar-brand > span,.navbar-right > li.active > a, .section-title > h1 > span,
+.section-title > p > span, .about-item > a, .about-item a:hover i, .about-item:hover a i,.cso-driescription > a,
+.service-item a:hover i, .service-item:hover a i,.service-item:hover h2,.video-control > h1 > span,.quote-title > h1 > span,.section-caption > p > span,
+.button-group > li.active,.button-group > li:hover,.team-social > li > a i, .skill-title h1,.section-title > h1 > span,.social-follow > ul > li > a > i,
+.news-post-content > p > span,.news-post-content  > a:hover, .load-more-btn,.footer-infomation > h1 > span,.contact-area .contact-submit:hover, .footer-section p a, #easy-top:before
+
+{
+    color:#cd2f2e !important  ;
+}
+
+
+
+ /* BORDER 1PX SOLID  */
+.quote-navigation a i, .quote-navigation a:hover i,.work-content > .work-caption > .work-caption-details > p > a,.work-content > .work-caption > .work-caption-details > p > a:hover,
+.client-navigation a i, .client-navigation a:hover i,.testimonial-navigation a i, .testimonial-navigation a:hover i,.social-follow > ul > li > a > i,
+.news-post-content > a, .load-more-btn,.news-post-content  > a:hover, .load-more-btn,.contact-area .contact-submit:hover,
+.contact-area .contact-submit,#easy-top,.carousel-caption > a, .carousel-caption > a:hover
+{
+ border: 1px solid #cd2f2e
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary,.btn-primary
+{
+    border-color: #cd2f2e
+}
+
+/* BORDER-BOTTOM 5PX SOLID */
+.contact-area input:hover, .contact-area input:focus, .contact-area #message:focus, .contact-area #message:hover, .contact-area #message:focus{
+    border-bottom: 5px solid #cd2f2e
+}
+
+
+
+/******************
+ * SWITCHER STYLE *
+ ******************/
+.switcherContent{
+    border-bottom: 1px solid #cd2f2e
+}
+.switcher .switcherContents header,.switcher .switcherShowHide,.tempLayout ul .active-layout,.tempLayout ul li:hover{
+    background: #cd2f2e;
+}
+.tempLayout ul li{
+    border: 1px solid  #cd2f2e
+}
