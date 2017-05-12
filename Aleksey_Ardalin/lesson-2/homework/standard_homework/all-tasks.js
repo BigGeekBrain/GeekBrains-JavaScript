@@ -21,8 +21,8 @@ alert( b ); // =3 наследуется текущее значение из п
 2. Чему будет равен x в примере ниже? 
 */
 
-var a = 2
-var x = 1 + ( a *= 2 )
+var a = 2;
+var x = 1 + ( a *= 2 );
 
 // х равен 5 так как полное выражение 1 + ( 2 * 2 )
 
@@ -33,8 +33,8 @@ var x = 1 + ( a *= 2 )
 */
 
 var
-  a = 5
-b = 7
+  a = 5,
+b = 7;
 
 // Затем написать скрипт, который работает по следующему принципу:
 
@@ -59,50 +59,51 @@ else {
 4. Присвоить переменной а значение в промежутке[0. .15].
 */
 
-var a
+var a;
 
 function getRandom( min, max ) {
   return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
 }
 
-a = getRandom( 0, 15 )
+a = getRandom( 0, 15 );
 
 // С помощью оператора switch организовать вывод чисел от a до 15.
 switch ( a ) {
   case 1:
-    console.log( 1 );
+    console.log( a++ );
   case 2:
-    console.log( 2 );
+    console.log( a++ );
   case 3:
-    console.log( 3 );
+    console.log( a++ );
   case 4:
-    console.log( 4 );
+    console.log( a++ );
   case 5:
-    console.log( 5 );
+    console.log( a++ );
   case 6:
-    console.log( 6 );
+    console.log( a++ );
   case 7:
-    console.log( 7 );
+    console.log( a++ );
   case 8:
-    console.log( 8 );
+    console.log( a++ );
   case 9:
-    console.log( 9 );
+    console.log( a++ );
   case 10:
-    console.log( 10 );
+    console.log( a++ );
   case 11:
-    console.log( 11 );
+    console.log( a++ );
   case 12:
-    console.log( 12 );
+    console.log( a++ );
   case 13:
-    console.log( 13 );
+    console.log( a++ );
   case 14:
-    console.log( 14 );
+    console.log( a++ );
   case 15:
-    console.log( 15 );
+    console.log( a++ );
     break;
   default:
     break;
 }
+
 
 
 
@@ -167,8 +168,8 @@ console.log( mathOperation( 5, 1, "mult" ) );
 7. * Сравнить null и 0. Попробуйте объяснить результат.
 */
 
-// Null это состояние отсутствие наполнения, тогда как 0 это число, либо указатель на false. 
-// При этом если из null не получить ничего, то 0 может означать многое как обьект содержимого
+// Null это состояние отсутствия наполнения, тогда как 0 это число, либо указатель на false. 
+// При этом если из null не получить ничего, то 0 может означать многое как содержимое обьекта
 
 
 
