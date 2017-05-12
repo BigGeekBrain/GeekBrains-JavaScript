@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 2</title>
+</head>
+
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input value="Посчитать" type="button" id="button" onclick="summ()">
+    <script>
+    var a = +document.getElementById('num1').value;
+    var b = +document.getElementById('num2').value;
+
+
+    function summ(a) {
+        return function(b) {
+            return a + b;
+        }
+
+
+    }
+    console.log(summ(a)(b));
+    console.log(summ(5)(5));
+    var result = summ( 6 )( 8 );
+    console.log( result ); 
+    </script>
+</body>
+
+</html>
