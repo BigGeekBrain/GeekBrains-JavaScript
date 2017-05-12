@@ -11,27 +11,34 @@
 	<script>
 		
 	var mas = [];
-	for( var i = 0; i < 100; i++ ) {
+	for( var i = 0; i < 10; i++ ) {
 		mas[i] = +Math.sqrt( i ).toFixed( 5 );
 		console.log( mas[i] + ' - квадратный корень из числа  ' + i );
 	}
-	console.log(mas[1], mas[2]);
+	
 
 	var mas1 = [];
-	for ( var j = 0; j < 100; j++ ) {
+	for ( var j = 0; j < 10; j++ ) {
 		mas1[j] = Math.sqrt( Math.random() * ( 1000 - 1 ) + 1 );
 		console.log( mas1[j] + '                              ++++');
 	}
 
 	var mas2 =[];
 	var z = 2;
-	for( var t = 50; t--; ) {
+	for( var t = 10; t--; ) {
 		if ( z%2 === 0 ) {
 			mas2[t] = Math.sqrt(z);
 			z *= 3;
 		}
 		console.log(mas2[t] + ' mas2' + t);
 	}
+
+
+	var mas3 = [ 4, 9, 25, 36, 49, 685, 223, 878, 422, 238, 754, 328 ],
+		mas3Sqrt = mas3.map(function ( mas3 ) {
+			return Math.sqrt(mas3);
+		});
+		console.log(mas3Sqrt + ' mas3');
 
 	</script>
 
