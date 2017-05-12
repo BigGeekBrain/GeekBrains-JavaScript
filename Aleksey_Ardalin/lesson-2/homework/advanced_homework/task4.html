@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS | Lesson 2 | Extra | Task 4</title>
+</head>
+
+<body>
+  <!-- 
+Задача:
+Сколько у кого яблок? 
+
+
+Требования:
+Составить блок-схему.
+
+Написать программу с текстовыми полями на странице и кнопкой "Рассчитать"
+ -->
+  <form action="#">
+    <p>
+      <input style="width: 21em;" type="text" name="peter" id="peter" placeholder="Введите число яблок у Пети">
+      <br>
+      <input style="width: 21em;" type="text" name="masha" id="masha" placeholder="Введите число яблок у Маши">
+    </p>
+    <p>
+      <button type="button" style="width: 21em;background-color: azure;" onclick="calculateApples()"> Расчитать</button>
+    </p>
+    <span id="result"></span>
+  </form>
+  <p>
+    <img src="yabloki.jpg" width="256">
+  </p>
+  <script type="text/javascript">
+  // задаём переменные и присваиваем им вводные
+
+  // создаём функцию которая будет вызываться по нажатию кнопки
+  function calculateApples() {
+    var peter = +document.getElementById("peter").value,
+      masha = +document.getElementById("masha").value,
+      dima = 8;
+
+    // Если Петя видит, что у него меньше яблок, чем у Маши, он с боем отбивает половину её яблок.
+    if (peter < masha) {
+      peter = peter + masha / 2;
+      masha = masha / 2;
+    }
+
+    // Дима работает в Фонде Борьбы с Шовинизмом и если замечает, что у Маши осталось меньше 5 яблок, отдаёт ей 2
+    if (masha < 5) {
+      masha = masha + 2;
+      dima = dima - 2;
+    }
+
+    // Дима идёт к Пете, но оказывается, что за время дороги Петя съедает часть яблок ( максимум 7, если столько у него есть; если меньше 7 - то все ). 
+    if (peter > 7) {
+      peter = peter - 7;
+    } else {
+      peter = 0;
+    }
+
+    // Дима конфискует у Пети 10 яблок, если они у него в наличии.
+    if (peter >= 10) {
+      peter = peter - 10;
+      dima = dima + 10;
+    }
+    // Если у Пети меньше 10 яблок, Дима не забирает у него яблоки и идёт к Маше, заподозрив её в даче ложных показаний и забирает у неё свои 2 яблока.
+    else {
+      dima = dima + 2;
+      masha = masha - 2;
+    }
+
+    console.log('Количесво яблок у Пети: ' + peter);
+    console.log('Количесво яблок у Маши: ' + masha);
+    console.log('Количесво яблок у Димы: ' + dima);
+    result.innerHTML = "Результат: " + peter + " " + masha + " " + dima;
+  }
+  </script>
+</body>
+
+</html>
