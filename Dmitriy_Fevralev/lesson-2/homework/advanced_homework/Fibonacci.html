@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lesson 2</title>
+</head>
+
+<body>
+  
+    <script>
+
+    function fibonacci( n, prev1, prev2 ) {
+        var current = prev1 + prev2;
+        var fibonacci_string = current + " ";
+        if ( n > 1 )
+            fibonacci_string += fibonacci( n - 1, current, prev1 );
+        return fibonacci_string;
+    }
+    console.log( fibonacci( 15, 1, 0 ) );
+
+    </script>
+</body>
+
+</html>
