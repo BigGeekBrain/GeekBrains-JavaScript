@@ -1,0 +1,368 @@
+doctype html
+//if lt IE 7
+  html.no-js.ie6(lang='en')
+//if IE 7
+  html.no-js.ie7(lang='en')
+//if IE 8
+  html.no-js.ie8(lang='en')
+// [if gt IE 8] <!
+html.no-js(lang='en')
+  // <![endif]
+  head
+    meta(charset='UTF-8')
+    title Bondy - Multipurpose Bootstrap Landing Page Template - Blogs
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    link(rel='shortcut icon', href='favicon.ico')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    // <link rel="stylesheet" href="css/font-awesome.min.css">
+    link(rel='stylesheet', href='css/styles.css', title='mainStyle')
+    script(src='js/modernizr.custom.32033.js')
+  body
+    // Wrap all page content here
+    #wrap
+      // Fixed navbar
+      #nav.navbar.navbar-fixed-top(role='navigation')
+        .theme-switcher
+          .colors
+            a.blue(href='javascript:void(0)')
+            a.orange(href='javascript:void(0)')
+            a.red(href='javascript:void(0)')
+          a.Switcher(href='javascript:void(0)')
+            span.fa.fa-pencil.fa-lg
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='#')
+              img(src='img/logo.png', alt='')
+          // Collect the nav links, forms, and other content for toggling
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='index.html') Home
+              li
+                a(href='#') about
+              li
+                a(href='#') services
+              li
+                a(href='#') team
+              li
+                a(href='#') our work
+              li
+                a(href='#') contact
+              li
+                a.active(href='blog-archive.html') blog
+              li.social-nav
+                a(href='#')
+                  i.fa.fa-twitter
+                a(href='#')
+                  i.fa.fa-facebook
+                a(href='#')
+                  i.fa.fa-google-plus
+                a(href='#')
+                  i.fa.fa-linkedin
+          // /.navbar-collapse
+        // /.container
+      // /.navbar
+      section.well.well-lg
+        .container
+          .row
+            .col-md-6
+              h2 blog
+            .col-md-6
+              ol.breadcrumb
+                li
+                  a(href='#') Home
+                li
+                  a(href='#') Library
+                li.active Data
+      section#blog
+        .container
+          .row
+            .col-md-9
+              .article
+                .row
+                  .col-md-12
+                    .col-sm-1.col-xs-2
+                      .row
+                        .type
+                          i.fa.fa-picture-o.fa-2x
+                        .date
+                          | 30
+                          span may
+                    .col-sm-11.col-xs-10
+                      .preview
+                        img.img-responsive(src='http://lorempixel.com/g/800/350/nightlife', alt='')
+                      h3
+                        a(href='blog-single.html') Lorem ipsum dolor sit amet.
+                      .article-details
+                        .author
+                          a(href='#')
+                            i.fa.fa-user
+                            |  Jon Doe
+                        .tags
+                          i.fa.fa-tags
+                          a(href='#') Responsive
+                      p.article-data
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id illo excepturi, sint odio, adipisci saepe maiores minima in. Quo enim velit corporis illum sint accusamus esse nostrum eaque ullam, eligendi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed cum quasi nihil earum quam, laudantium maxime repellat architecto, consectetur laboriosam facilis aut accusamus officiis sequi dolore blanditiis eius, odio, ab.
+                      span.divider
+              .article
+                .row
+                  .col-md-12
+                    .col-sm-1.col-xs-2
+                      .row
+                        .type
+                          i.fa.fa-youtube-play.fa-2x
+                        .date
+                          | 30
+                          span may
+                    .col-sm-11.col-xs-10
+                      .preview.flex-video.widescreen
+                        iframe(src='//www.youtube.com/embed/m5_AKjDdqaU', frameborder='0', allowfullscreen='')
+                      h3
+                        a(href='blog-single.html') Lorem ipsum dolor sit amet.
+                      .article-details
+                        .author
+                          a(href='#')
+                            i.fa.fa-user
+                            |  Jon Doe
+                        .tags
+                          i.fa.fa-tags
+                          a(href='#') Responsive
+                      p.article-data
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id illo excepturi, sint odio, adipisci saepe maiores minima in. Quo enim velit corporis illum sint accusamus esse nostrum eaque ullam, eligendi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed cum quasi nihil earum quam, laudantium maxime repellat architecto, consectetur laboriosam facilis aut accusamus officiis sequi dolore blanditiis eius, odio, ab.
+                      span.divider
+              .article
+                .row
+                  .col-md-12
+                    .col-sm-1.col-xs-2
+                      .row
+                        .type
+                          i.fa.fa-youtube-play.fa-2x
+                        .date
+                          | 30
+                          span may
+                    .col-sm-11.col-xs-10
+                      .preview
+                        #carousel-example-generic.carousel.slide(data-ride='carousel')
+                          // Indicators
+                          ol.carousel-indicators.vertical
+                            li.active(data-target='#carousel-example-generic', data-slide-to='0')
+                            li(data-target='#carousel-example-generic', data-slide-to='1')
+                            li(data-target='#carousel-example-generic', data-slide-to='2')
+                          // Wrapper for slides
+                          .carousel-inner
+                            .item.active
+                              img(src='http://lorempixel.com/800/350/nightlife/', alt='')
+                            .item
+                              img(src='http://lorempixel.com/800/350/', alt='')
+                            .item
+                              img(src='http://lorempixel.com/800/350/sports/', alt='')
+                      h3
+                        a(href='blog-single.html') Lorem ipsum dolor sit amet.
+                      .article-details
+                        .author
+                          a(href='#')
+                            i.fa.fa-user
+                            |  Jon Doe
+                        .tags
+                          i.fa.fa-tags
+                          a(href='#') Responsive
+                      p.article-data
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id illo excepturi, sint odio, adipisci saepe maiores minima in. Quo enim velit corporis illum sint accusamus esse nostrum eaque ullam, eligendi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed cum quasi nihil earum quam, laudantium maxime repellat architecto, consectetur laboriosam facilis aut accusamus officiis sequi dolore blanditiis eius, odio, ab.
+                      span.divider
+              .article
+                .row
+                  .col-md-12
+                    .col-sm-1.col-xs-2
+                      .row
+                        .type
+                          i.fa.fa-music.fa-2x
+                        .date
+                          | 30
+                          span may
+                    .col-sm-11.col-xs-10
+                      .preview
+                        iframe(width='100%', height='450', scrolling='no', frameborder='no', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/1818488&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true')
+                      h3
+                        a(href='blog-single.html') Lorem ipsum dolor sit amet.
+                      .article-details
+                        .author
+                          a(href='#')
+                            i.fa.fa-user
+                            |  Jon Doe
+                        .tags
+                          i.fa.fa-tags
+                          a(href='#') Responsive
+                      p.article-data
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id illo excepturi, sint odio, adipisci saepe maiores minima in. Quo enim velit corporis illum sint accusamus esse nostrum eaque ullam, eligendi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed cum quasi nihil earum quam, laudantium maxime repellat architecto, consectetur laboriosam facilis aut accusamus officiis sequi dolore blanditiis eius, odio, ab.
+                      span.divider
+              .article
+                .row
+                  .col-md-12
+                    .col-sm-1.col-xs-2
+                      .row
+                        .type
+                          i.fa.fa-quote-right.fa-2x
+                        .date
+                          | 30
+                          span may
+                    .col-sm-11.col-xs-10
+                      .preview
+                        .quote
+                          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nemo eos molestiae aperiam alias minima suscipit voluptate laboriosam dolorum quae fugit ab magnam in facilis aspernatur vitae possimus, a blanditiis!
+                          | Modi reiciendis commodi nihil consectetur, culpa at iusto ipsum dolore cum natus doloremque nesciunt id reprehenderit aspernatur alias eius dolor obcaecati nam velit nulla? Ullam nulla repudiandae dolores adipisci ut.
+                          | Enim repellat animi quam dolor, explicabo, modi quos. Doloremque ipsum sed magnam, corrupti unde reiciendis magni temporibus eaque! Inventore doloribus vero, hic laborum cum tempore porro illo ratione aliquid quisquam!
+                      span.divider
+              .row
+                .pagination-wrapper.col-md-12.clearfix
+                  ul.pagination.pagination-lg
+                    li
+                      a(href='#') «
+                    li.active
+                      a(href='#') 1
+                    li
+                      a(href='#') 2
+                    li
+                      a(href='#') 3
+                    li
+                      a(href='#') 4
+                    li
+                      a(href='#') 5
+                    li
+                      a(href='#') »
+            .col-md-3
+              .side-block.search
+                h4 Search Blog
+                .form-group.has-feedback
+                  input.form-control(type='text', placeholder='Search here...')
+                  button(type='submit')
+                    i.fa.fa-search.form-control-feedback
+                span.divider
+              .side-block
+                h4 Blog Categories
+                ul
+                  li
+                    a(href='#') Photoshop
+                  li
+                    a(href='#') Web / Graphic Design
+                  li
+                    a(href='#') Mobile Development
+                  li
+                    a(href='#') Video Editing
+                  li
+                    a(href='#') Logo Design & Branding
+                span.divider
+              .side-block
+                h4 Latest Posts
+                .media
+                  a.pull-left(href='#')
+                    img.media-object(src='http://lorempixel.com/60/60/', alt='...')
+                  .media-body
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    a(href='#') by Admin
+                .media
+                  a.pull-left(href='#')
+                    img.media-object(src='http://lorempixel.com/60/60/', alt='...')
+                  .media-body
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    a(href='#') by Admin
+                .media
+                  a.pull-left(href='#')
+                    img.media-object(src='http://lorempixel.com/60/60/', alt='...')
+                  .media-body
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    a(href='#') by Admin
+                span.divider
+              .side-block
+                h4 Text Widget
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugit vitae non assumenda quo ipsam, doloremque aspernatur commodi, eligendi consequatur sunt officia, omnis.
+                span.divider
+              .side-block
+                h4 tags cloud
+                a.tag(href='#') design
+                a.tag(href='#') development
+                a.tag(href='#') photoshop
+                a.tag(href='#') web design
+                a.tag(href='#') logo
+                a.tag(href='#') html5
+                span.divider
+      section#get-in-touch
+        .container
+          .row
+            .col-md-8.col-md-push-2.clearfix
+              .section-heading
+                h1 .get in touch
+                h4
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore reiciendis vel reprehenderit expedita cupiditate repellat debitis!
+                span.divider
+          .row
+            .col-md-6
+              .contact-details
+                .detail
+                  h4
+                    | Rune
+                    span.brandy k
+                    |  web agency.
+                  p 4 dsaaa St- Amman, Jordan
+                .detail
+                  h4 call us
+                  p +2 233 5438324
+                .detail
+                  h4 email us
+                  p Support@yourdomain.com
+                .detail
+                  ul.clearfix
+                    li
+                      a(href='#')
+                        i.fa.fa-google-plus.fa-2x
+                    li
+                      a(href='#')
+                        i.fa.fa-twitter.fa-2x
+                    li
+                      a(href='#')
+                        i.fa.fa-facebook.fa-2x
+                    li
+                      a(href='#')
+                        i.fa.fa-youtube.fa-2x
+                    li
+                      a(href='#')
+                        i.fa.fa-pinterest.fa-2x
+            .col-md-6
+              form
+                .form-group.has-feedback.left
+                  input.form-control(type='text', placeholder='NAME')
+                  i.fa.fa-user.form-control-feedback
+                .form-group.has-feedback.left
+                  input.form-control(type='email', placeholder='Email')
+                  i.fa.fa-envelope-o.form-control-feedback
+                .form-group.has-feedback.left
+                  textarea.form-control(rows='7', placeholder='MESSAGE')
+                  i.fa.fa-pencil-square-o.form-control-feedback
+                button.btn.btn-primary.btn-lg.pull-right(type='submit') SUBMIT
+      section#map
+      footer#site-footer
+        .container
+          .row
+            span.divider.grey
+            h4
+              | 2014 ScoopTheme
+              span.brandy s
+              |  Agency.
+            h5
+              | by 
+              a(href='#') ScoopThemes
+            a.scroll-top(href='#')
+              img.top(src='img/top.png', alt='')
+    // /wrap
+    script(src='js/jquery.min.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/stellar.js')
+    script(src='js/jquery.circliful.min.js')
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false')
+    script(src='js/script.js')
