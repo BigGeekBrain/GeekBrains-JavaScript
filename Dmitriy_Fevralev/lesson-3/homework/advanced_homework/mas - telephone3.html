@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Массив Телефонов 3 вариант</h1>
+	<p>Открыть console.log и обновить страницу</p>
+<script>
+
+// Дан массив ['1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1','0'].
+// Сделайте из него массив телефонов [ '16-25-34', '50-82-79']. Длина массива
+// всегда кратна 6
+
+///////////////////////////////////////////ВАРИАНТ 3////////////////////////////////////////////////////	
+
+var mas = [ '1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1', '0' ],
+	mas1 = [],
+	mas2 = [],
+	resMas1,
+	resMas2,
+	newRes1 = [],
+	newRes2 = [];
+
+	mas1 = mas.slice(0,6);
+	mas2 = mas.slice(6,12);
+
+	resMas1 = mas1.join('');
+	resMas2 = mas2.join('');
+
+var res1 = [],
+	res2 = [];
+	for( var i = 0, len1 = resMas1.length; i < resMas1.length / 2; i++ ) {
+		newRes1[i] = resMas1[i] + resMas1[--len1];
+		if (newRes1.length == i + 1 ) {
+			res1 = newRes1.join('-');
+			for( var j = 0, len2 = resMas2.length; j < resMas2.length / 2; j++ ) {
+				
+				newRes2[j] = resMas2[j] + resMas2[--len2];
+				if ( newRes2.length == j + 1 ) {
+					res2 = newRes2.join('-');
+				}
+			}
+		}
+	}
+
+var result = [];
+result.push(res1,res2);		
+
+console.log(mas);
+console.log(mas1,mas2);
+console.log(resMas1, resMas2);
+console.log(newRes1, newRes2);
+console.log(res1, res2);
+console.log(result);
+
+                             
+</script>
+
+</body>
+</html>
