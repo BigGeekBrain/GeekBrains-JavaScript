@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apple</title>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            <input type="text" id="petya" placeholder="кол-во яблок у Пети">
+        </div>
+        <div>
+            <input type="text" id="masha" placeholder="кол-во яблок у Маши">
+        </div>
+        <div>
+            <input type="text" id="dima" readonly placeholder="У Димы 8 яблок">
+        </div>
+        <div>
+            <input type="text" id="resPetya" readonly>
+        </div>
+        <div>
+            <input type="text" id="resMasha" readonly>
+        </div>
+        <div>
+            <input type="text" id="resDima" readonly>
+        </div>
+        <button onclick="calc()">
+    	Рассчитать
+    </button>
+        </div>
+    </form>
+    <script>
+        var masha = document.getElementById('masha'),
+            petya = document.getElementById('petya'),
+            dima = 8,
+            resPetya = document.getElementById('resPetya'),
+            resMasha = document.getElementById('resMasha'),
+            resDima = document.getElementById('resDima')
+
+        function calc() {
+            var m = +masha.value,
+                n = +petya.value,
+                d = +dima;
+
+            if (n < m) {
+
+                n = n + (m / 2);
+                m = m / 2;
+                if (m < 5) {
+                    m += 2;
+                    d -= 2;
+                } 
+//                
+            } 
+//          
+            n -= 7;
+            if (n >= 10) {
+                d += 10;
+                n -= 10;
+                
+            } else if (n < 0) {
+                    n = 0;
+                }
+            
+            resDima.value = 'У Димы осталось ' + d + ' яблок';
+    		resMasha.value = 'У Маши осталось ' + m + ' яблок';
+    		resPetya.value = 'У Пети осталось ' + n + ' яблок';
+        }
+    
+        
+    </script>
+
+</body>
+
+</html>
