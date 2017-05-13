@@ -5,14 +5,20 @@
 	<title>JS Lesson 3 - mas-telephone</title>
 </head>
 <body>
-	<h1>Массив Телефонов 4 вариант</h1>
-	<p>Открыть console.log и обновить страницу</p>	
-
-<div id="div">
 	
-</div>
-<button type="button" id="button" onclick="showResult()">Вывести результаты</button>
 
+
+<div id="text">
+<h1>Массив Телефонов 4 вариант</h1>
+<p>Открыть console.log и обновить страницу</p>	
+
+
+	<div id="div">
+	
+	</div>
+	<button type="button" id="button" onclick="showResult()">Вывести результаты</button>
+</div>
+<button id="show" onclick="show()">Нажать</button>
 <script>
 
 	// Дан массив ['1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1','0'].
@@ -20,8 +26,6 @@
 	// всегда кратна 6
 
 /////////////////////////////////////////ВАРИАНТ 4////////////////////////////////////////////////////////
-
-var div = document.getElementById( 'div' );
 
 var mas = [ '1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1', '0' ],
 	mas1 = [],
@@ -31,10 +35,10 @@ var mas = [ '1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1', '0' ],
 	newRes1 = [],
 	newRes2 = [];
 
-	mas1 = mas.slice(0,6);
+	mas1 = mas.slice(0,6),
 	mas2 = mas.slice(6,12);
 
-	resMas1 = mas1.join('');
+	resMas1 = mas1.join(''),
 	resMas2 = mas2.join('');
 
 var res1 = [],
@@ -61,9 +65,10 @@ console.log(res1, res2);
 console.log(result);
 
 var array = [mas,mas1,mas2,newRes1,newRes2,res1,res2,result];
+
 function showResult() {
 	var swCase;
-		for ( var key1 = 0; key1 < array.length; key1++ ){				
+		for ( var key1 = 0; key1 < array.length; key1++ ){					
 			switch ( key1 ) {
 				case 0:
 					swCase = ' - Такой был массив<br>';						
@@ -90,11 +95,22 @@ function showResult() {
 					swCase = ' - Сложил все в один \"массив телефонов\"<br>';						
 					break;
 				}
-		div.innerHTML += array[key1] + swCase;
+				div.innerHTML += array[key1] + swCase;		
 	}
-	div.innerHTML += ' Необходимо открыть консоль !!!';
+	div.innerHTML += '<br> Необходимо открыть консоль !!!';	
 }
 	
+var text = document.getElementById( 'text' );
+text.style.display = 'none';
+function show() {
+var div = document.getElementById( 'div' );
+
+	if ( text.style.display == 'none' ) {
+		text.style.display = 'block';
+	} else {
+		text.style.display = 'none';
+	}
+}
 	</script>
 </body>
 </html>
