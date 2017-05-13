@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Массив Телефонов 1 вариант</h1>
+	<p>Открыть console.log и обновить страницу</p>
+
+<script>
+
+
+
+// Дан массив ['1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1','0'].
+// Сделайте из него массив телефонов [ '16-25-34', '50-82-79']. Длина массива
+// всегда кратна 6		
+
+/////////////////////////////////////////ВАРИАНТ 1////////////////////////////////////////////////////////
+
+
+var mas = [ '1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1', '0' ],
+	mas1 = [],
+	mas2 = [],
+	res = [mas1, mas2];
+
+for ( var prop in mas ) {
+}
+
+mas1 = mas1.push(mas[0] + mas[5] + '-' + mas[1] + mas[4] + '-' + mas[2] + mas[3]);
+mas2 = mas2.push(mas[6] + mas[11] + '-' + mas[7] + mas[10] + '-' + mas[8] + mas[9]);
+
+for ( var i in res) {
+}
+
+var newMas = res[0].join('-');
+
+	newMas += ',',
+	newMas += res[1].join('-'),
+	newMas = newMas.split(',');
+	
+console.log(mas);
+console.log(res[0],res[1]);
+console.log(newMas);	
+
+</script>
+</body>
+</html>
