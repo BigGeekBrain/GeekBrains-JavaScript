@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="number" id="age" placeholder="Введите Ваш возраст">
+    <button type="button" onclick="go()">Отправить</button>
+
+    <script>
+      function go() {
+        var age = +document.getElementById("age").value;
+        (age < 18) ? console.log("Вы входите в закрытый раздел сайта!") : console.log("Добро пожаловать!");
+      }
+    </script>
+  </body>
+</html>
