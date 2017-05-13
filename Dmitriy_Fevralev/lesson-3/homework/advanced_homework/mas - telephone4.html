@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Lesson 3 - mas-telephone</title>
+</head>
+<body>
+	<h1>Массив Телефонов 4 вариант</h1>
+	<p>Открыть console.log и обновить страницу</p>	
+
+<div id="div">
+	
+</div>
+<button type="button" id="button" onclick="showResult()">Вывести результаты</button>
+
+<script>
+
+	// Дан массив ['1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1','0'].
+	// Сделайте из него массив телефонов [ '16-25-34', '50-82-79']. Длина массива
+	// всегда кратна 6
+
+/////////////////////////////////////////ВАРИАНТ 4////////////////////////////////////////////////////////
+
+var div = document.getElementById( 'div' );
+
+var mas = [ '1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1', '0' ],
+	mas1 = [],
+	mas2 = [],
+	resMas1,
+	resMas2,
+	newRes1 = [],
+	newRes2 = [];
+
+	mas1 = mas.slice(0,6);
+	mas2 = mas.slice(6,12);
+
+	resMas1 = mas1.join('');
+	resMas2 = mas2.join('');
+
+var res1 = [],
+	res2 = [];
+
+var result = [];
+for( var i = 0, len1 = resMas1.length; i < resMas1.length / 2; i++ ) {
+	newRes1[i] = resMas1[i] + resMas1[--len1];			
+		res1 = newRes1.join('-');
+		if ( res2 == '' ) {
+		for( var j = 0, len2 = resMas2.length; j < resMas2.length / 2; j++ ) {					
+			newRes2[j] = resMas2[j] + resMas2[--len2];					
+				res2 = newRes2.join('-');					
+		}
+	}
+}
+		
+result.push(res1,res2);			
+
+console.log(mas);
+console.log(mas1,mas2);		
+console.log(newRes1, newRes2);
+console.log(res1, res2);
+console.log(result);
+
+var array = [mas,mas1,mas2,newRes1,newRes2,res1,res2,result];
+function showResult() {
+	var swCase;
+		for ( var key1 = 0; key1 < array.length; key1++ ){				
+			switch ( key1 ) {
+				case 0:
+					swCase = ' - Такой был массив<br>';						
+					break;
+				case 1:
+					swCase = ' - Первая часть массива<br>';
+					break;
+				case 2:		
+					swCase = ' - Вторая часть массива<br>';						
+					break;
+				case 3:
+					swCase = ' - Строка первой части массива<br>';
+					break;
+				case 4:
+					swCase = ' - Строка второй части массива<br>';						
+					break;
+				case 5:
+					swCase = ' - Складываю элементы первого массива по 2 символа<br>';
+					break;
+				case 6:		
+					swCase = ' - Складываю элементы второго массива по 2 символа<br>';			
+					break;
+				case 7:		
+					swCase = ' - Сложил все в один \"массив телефонов\"<br>';						
+					break;
+				}
+		div.innerHTML += array[key1] + swCase;
+	}
+	div.innerHTML += ' Необходимо открыть консоль !!!';
+}
+	
+	</script>
+</body>
+</html>
