@@ -4,7 +4,10 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     pug = require('gulp-pug'),
     imagemin = require('gulp-imagemin'),
-    prefix = require('gulp-autoprefixer');
+    prefix = require('gulp-autoprefixer'),
+    sass = require('gulp-ruby-sass') ,
+    notify = require("gulp-notify") ,
+    bower = require('gulp-bower');
 
 gulp.task('js:compress', function() {
     function run() {
@@ -60,6 +63,21 @@ gulp.task("autoPrefix", function() {
     }))
         .pipe(gulp.dest("src"))
 
+});
+
+var config = {
+     sassPath: 'vendor/font-awesome/scss',
+     bowerDir: 'bower_components' 
+}
+
+gulp.task('bower', function() { 
+return bower()
+         .pipe(gulp.dest(config.bowerDir)) 
+});
+
+gulp.task('icons', function() { 
+return gulp.src(config.bowerDir + '/vendor/font-awesome/fonts') 
+    .pipe(gulp.dest('scr')); 
 });
 
 gulp.task('default', ['js:compress', 'pug', 'imagemin', 'autoPrefix'])
