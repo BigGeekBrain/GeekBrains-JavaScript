@@ -19,5 +19,8 @@
     "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^4.0.0"
   }
 }

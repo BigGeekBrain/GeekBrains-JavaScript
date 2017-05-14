@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     pug = require('gulp-pug'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    prefix = require('gulp-autoprefixer');
 
 gulp.task('js:compress', function() {
     function run() {
@@ -51,4 +52,14 @@ gulp.task('imagemin', function() {
     return run();
 });
 
-gulp.task('default', ['js:compress', 'pug', 'imagemin'])
+gulp.task("autoPrefix", function() {
+    gulp.src("css/freelancer.css")
+    .pipe(prefix({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
+        .pipe(gulp.dest("src"))
+
+});
+
+gulp.task('default', ['js:compress', 'pug', 'imagemin', 'autoPrefix'])
