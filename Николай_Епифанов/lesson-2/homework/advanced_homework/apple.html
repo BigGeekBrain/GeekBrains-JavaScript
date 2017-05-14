@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="number" id="petr" placeholder="Яблоки Пети">
+    <input type="number" id="masha" placeholder="Яблоки Маши">
+    <button type="button" onclick="go()">Рассчитать</button>
+
+    <script>
+    var d = 8;
+      function go() {
+        var n = +document.getElementById("petr").value;
+        var m = +document.getElementById("masha").value;
+
+        if ( n < m ) {
+          n += m/2;
+          m = m/2;
+        }
+
+        if ( m < 5 ) {
+          m += 2;
+          d -= 2;
+        }
+
+        if ( 7 <= n ) {
+          n -= 7;
+        } else {
+          n -= n;
+        }
+
+        if ( 10 <= n ) {
+          d += 10;
+          n -= 10;
+        } else {
+          d += 2;
+          m -= 2;
+        }
+
+        console.log("У Пети " + n + " яблок");
+        console.log("У Маши " + m + " яблок");
+        console.log("У Димы " + d + " яблок");
+      }
+    </script>
+  </body>
+</html>
