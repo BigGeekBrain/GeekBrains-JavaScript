@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>outside_number</title>
+	<style>
+		input {
+			width: 30px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 3px;
+			outline: none;
+			cursor: pointer;
+			padding: 2px 10px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#result {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			width: 320px;
+			text-align: center;
+			min-height: 20px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<h1>Задание:</h1>
+<p>Даны четыре целых числа, одно из которых отлично от трех других, равных между собой. Определить порядковый номер числа, отличного от остальных.</p>
+	<input type="text" id="1" value="1">
+	<input type="text" id="2" value="2">
+	<input type="text" id="3" value="1">
+	<input type="text" id="4" value="1">
+	<button type="button" id="find"> найти порядковый номер отличающегося числа </button>
+	<div id="result"></div>
+	<script>
+
+	var btn = document.getElementById( 'find' );
+	var res = null;
+
+		function findOutsider ( a, b, c, d ) {
+			if ( a !== b && a !== c ) {
+				res = "порядковый номер отличающегося числа - 1";
+			} else if ( b !== a && b !== c ) {
+				res = "порядковый номер отличающегося числа - 2";
+			} else if ( c !== a && c !== b ) {
+				res = "порядковый номер отличающегося числа - 3";
+			} else if ( d !== a && d !== b ) {
+				res = "порядковый номер отличающегося числа - 4";
+			}
+
+			result.style.display = 'block';
+			result.innerHTML = res;
+		}
+
+		btn.addEventListener("click", function(){findOutsider( +document.getElementById( '1' ).value, +document.getElementById( '2' ).value, +document.getElementById( '3' ).value, +document.getElementById( '4' ).value)}, false);
+	</script>
+</body>
+</html>
