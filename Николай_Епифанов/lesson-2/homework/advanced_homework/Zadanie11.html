@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <p>11. Написать функцию вычисления корней квадратичного уравнения squareRoots( a, b, c, x1_input, x2_input )
+- a,b,c - соотв. коэффициенты
+- x1_input, x2_input - текстовые поля, куда будет добавляться результат вычисления корней
+- проверить работу на странице</p>
+  <input type="text" name="firstNumber" id="firstNumber" placeholder="a">
+  <input type="text" name="firstNumber" id="secondNumber" placeholder="b">
+  <input type="text" name="firstNumber" id="thirdNumber" placeholder="c">
+  <div id="firstRoot"></div>
+  <div id="secondRoot"></div>
+  <button onclick="squareRoots()">Узнать результат</button>
+
+  <script>
+  function squareRoots() {
+    var a = document.getElementById("firstNumber").value;
+    var b = document.getElementById("secondNumber").value;
+    var c = document.getElementById("thirdNumber").value;
+    var x1;
+    var x2;
+    var D = Math.pow(b, 2) - (4 * (a * c));
+
+    if (isNaN(D) === false && D > 0) {
+      x1 = ( -(b) + Math.sqrt(D) ) / (2 * a);
+      x2 = ( -(b) - Math.sqrt(D) ) / (2 * a);
+
+      if ( ( -(b) + Math.sqrt(D) ) % (2 * a) === 0 ) {
+        firstRoot.innerHTML = "x1 = " + x1;
+      } else {
+        firstRoot.innerHTML = "x1 = " + x1.toFixed(2);
+      }
+
+      if ( ( -(b) - Math.sqrt(D) ) % (2 * a) === 0 ) {
+        firstRoot.innerHTML = "x2 = " + x2;
+      } else {
+        firstRoot.innerHTML = "x2 = " + x2.toFixed(2);
+      }
+    }else if (isNaN(D) === false && D === 0) {
+      x1 = (-(b) ) / (2 * a);
+      x2 = (-(b) ) / (2 * a);
+      if ((-(b) ) % (2 * a) === 0) {
+        firstRoot.innerHTML = "x1 = " + x1;
+        secondRoot.innerHTML = "x2 = " + x2;
+      }else {
+        firstRoot.innerHTML = "x1 = " + x1.toFixed(2);
+        secondRoot.innerHTML = "x2 = " + x2.toFixed(2);
+      }
+    }else if (D < 0) {
+      firstRoot.innerHTML = "решений";
+      secondRoot.innerHTML = "нет";
+    }
+  }
+  </script>
+</body>
+</html>
