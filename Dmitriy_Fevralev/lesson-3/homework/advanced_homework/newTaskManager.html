@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -8,15 +8,51 @@
 	<h1>Не готово :(</h1>
 	<input type="text" id="task" placeholder="Добавить новую задачу">
 	<button  id="button" onclick="addTask()">Создать</button>
-	<div id="showText">
+	<div id="showTasks">
 		
 	</div>
+	<button onclick="sortTask()">Сортировать</button>
 
 
 
 	<script>
-		
+		var task_input = document.getElementById( 'task' ),
+			task_container = document.getElementById( 'showTasks' ),
+			tasks = [];
 
+			function addTask() {
+				var task_title = task_input.value;
+				tasks.push( task_title );
+
+				renderTask( task_title );
+			}
+
+			function renderTask( title ) {
+				task_container.innerHTML += '<div class="container">' + title + '<a href="#" onclick="deleteTask(\'' + title + '\' )">Удалить</a>' + '</div>';
+			}
+
+			function deleteTask( title ) {
+				var index = tasks.indexOf( title );
+
+				if ( index === -1 ) {
+					return;
+				}
+
+				tasks.splice( index, 1 );
+
+				task_container.innerHTML = '';
+  
+			    for (var i = 0, len = tasks.length; i < len; i++) {
+			  		renderTask( tasks[ i ] );
+			  		}
+				}
+
+			function sortTask( title ) {
+				
+				for (var i = 0, len = tasks.length; i < len; i++) {
+			  		renderTask( tasks.sort()[i] );
+			  		}
+			}
 
 
 
