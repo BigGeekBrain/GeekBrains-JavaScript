@@ -63,22 +63,13 @@
 	<br>
 	<div id="showAverage"></div>
 	<script>
+
 		function average() {
 			var a = +document.getElementById('firstNumber').value;
 			var b = +document.getElementById('secondNumber').value;
 			var c = +document.getElementById('thirdNumber').value;
-			var aver;
-
-			if ( ( a > b && a < c ) || ( a > c && a < b ) ) {
-				aver = a;
-				showAverage.innerHTML = "среднее число из -------- " + a + " | " + b + " | " + c + " -------- это " + aver;
-			} else if ( ( b > a && b < c ) || ( b > c && b < a ) ) {
-				aver = b;
-				showAverage.innerHTML = "среднее число из -------- " + a + " | " + b + " | " + c + " -------- это " + aver;
-			} else {
-				aver = c;
-				showAverage.innerHTML = "среднее число из -------- " + a + " | " + b + " | " + c + " -------- это " + aver;
-			}
+			var aver = ( a + b + c ) / 3;
+			showAverage.innerHTML = "среднее чисело между -------- " + a + " | " + b + " | " + c + " -------- это " + aver;
 		}
 	</script>
 </body>
