@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Lesson 3</title>
+</head>
+<body>
+<h1>Не готово :(</h1>
+	<input type="text" id="task" placeholder="Добавить новую задачу">
+	<button  id="button" onclick="addTask()">Создать</button>
+	<div id="showText">
+		
+	</div>
+
+	<script>
+		var task = document.getElementById( 'task' );
+		var showText = document.getElementById( 'showText' );		
+		var countArrayTask;
+
+		var arrayTask = [];
+		function addTask() {
+				
+			if( task.value.trim() === "" ) {			
+				alert('Вы ничего не ввели');
+			} else {
+				function arrayPush( str ) {
+					return arrayTask.push(task.value);
+				}
+
+					arrayPush(task);
+					task.value = '';
+
+					console.log( arrayTask );
+
+
+					countArrayTask = arrayTask.length;
+					iCycle = 0;
+					var taskCounter;
+					while ( iCycle < countArrayTask ) {
+						taskCounter = '<div class=counter' + iCycle + '>' + arrayTask[iCycle] + '</div>';
+						iCycle++;				
+					}
+
+				showText.innerHTML += taskCounter + '<br>';
+			}	
+				
+				
+				
+			}
+
+
+
+			
+			
+
+
+
+
+
+		//	var iCycle = arrayTask.length - 1;
+		//	while ( iCycle ) {
+		//
+		//		iCycle--;
+		//	}
+
+	</script>
+</body>
+</html>

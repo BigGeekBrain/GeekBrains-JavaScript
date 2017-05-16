@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arg1 = +prompt("Число?", "");
+    var arg2 = +prompt("Число?", "");
+    var operation = prompt("Что делаем ?", "");
+
+    function mathOperation(arg1, arg2, operation) {
+      switch(operation) {
+        case "+":
+          result = arg1 + arg2;
+          break  
+        case "*":
+          result = arg1 * arg2;
+          break
+        case "/":
+          result = arg1 / arg2;
+          break
+        case "-":
+          result = arg1 - arg2;
+          break
+      }
+      return result;
+    }
+    mathOperation(arg1, arg2, operation);
+
+    alert(result);
+
+    
+    
+  </script>
+</body>
+</html>

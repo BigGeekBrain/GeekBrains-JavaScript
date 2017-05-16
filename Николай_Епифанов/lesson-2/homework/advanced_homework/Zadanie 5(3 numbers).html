@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="number" id="a" placeholder="Число A">
+    <input type="number" id="b" placeholder="Число B">
+    <input type="number" id="c" placeholder="Число C">
+    <button type="button" onclick="go()">Рассчитать</button>
+
+    <script>
+      function go(){
+        var a = document.getElementById('a').value;
+        var b = document.getElementById('b').value;
+        var c = document.getElementById('c').value;
+
+        if (( b < a && a < c ) || ( c < a && a < b )) {
+          console.log("Среднее число A " + (a));
+        }else if (( a < b && b < c ) || ( c < b && b < a )) {
+          console.log("Среднее число B " + (b));
+        }else if (( a < c && c < b ) || ( b < c && c < a )) {
+          console.log("Среднее число C " + (c));
+        }else {
+          console.log("Введите разные числа.");
+        }
+      }
+    </script>
+  </body>
+</html>

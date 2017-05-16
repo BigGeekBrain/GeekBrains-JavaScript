@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  var num1 = +prompt("Введите первое число", "2,3,5....");
+  var num2 = +prompt("Введите второе число", "2,3,5....");
+  var n = +prompt("Введите длину", "");
+    function fibonacci( n, num1, num2 ) {
+      var currentNum = num1 + num2;
+      var saveNum = currentNum + " ";
+        if (n > 1) {
+          saveNum += fibonacci( n-1, currentNum, num2 );
+        }
+      return saveNum;
+    }
+
+
+    alert(fibonacci( n, num1, num2 ));
+  </script>
+</body>
+</html>

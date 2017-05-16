@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>do_while_from_0_to_10.html</title>
+</head>
+<body>
+	<script>
+	function numbers() { 
+	var counter = 0;
+		do {
+			if ( counter === 0 ) {
+				console.log( counter++ + " - это ноль" );
+			} else if ( counter % 2 === 0 ) {
+				console.log( counter++ + " - это четное число" );
+			} else if ( counter % 2 !== 0 ) {
+				console.log( counter++ + " - это нечетное число" );
+			}
+		} while ( counter !== 11 );
+	}
+
+	numbers();
+	</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text_editor.html</title>
+	<style>
+		input {
+			width: 180px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+			margin-left: 15px; 
+			padding: 5px;
+			margin: 20px 0px;
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 3px;
+			outline: none;
+			cursor: pointer;
+			padding: 2px 10px;
+			vertical-align: middle;
+			margin: 5px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#stat {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			min-width: 300px;
+			max-width: 400px;
+			text-align: left;
+			min-height: 20px;
+			white-space: pre-wrap;
+			overflow-x: auto;
+			display: inline-block;
+		}
+		.status__item {
+			margin: 20px;
+			width: 100px;
+		}
+		.col > p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 20px 10px;
+			width: 500px;
+			white-space: pre-wrap;
+		}
+		.conteiner {
+			display: flex;
+		}
+		.col {
+		text-align: center;
+		width: 50%;
+		height: 300px;
+		}
+	</style>
+</head>
+<body>
+<h1>Задача:</h1>
+<p>9. Сделать построчный текстовый редактор. 
+- Есть текстовое поле input, в которое можно ввести текст строки и две кнопки: Отправить и Предпросмотр
+- При нажатии на Отправить, текст сохраняется в программе, а содержимое текстового поля обнуляется. 
+- При написании последующих строк, они добавляются к предыдущим с переносом на новую строку (<bt>). 
+- При нажатии на Предпросмотр в правой половине сайта отображается написанный текст (восопльзуйтесь свойством innerHTML).</p>
+<div class="conteiner">
+	<div class="col">
+		<input type="text" name="myString" id="myString" placeholder="Введите текст">
+		<div><button type="button" id="show">Предпросмотр</button></div>
+		<div><button type="submit" id="sand">Отправить</button></div>
+	</div>
+	<div class="col">
+		<p><b>Предпросмотр:</b></p>
+		<div id="stat"></div>
+	</div>
+</div>
+	<script>
+		var strings = '';
+		var string = document.getElementById( 'myString' );
+
+		var addString = function() {
+			var newString = string.value;
+			strings = newString + '\n';
+			console.log( strings );
+		}
+
+		var showString = function() {
+			var preString = string.value;
+			stat.innerHTML = preString;
+		}
+
+		var showBtn = document.getElementById( 'show' );
+		var sandBtn = document.getElementById( 'sand' );
+
+		showBtn.addEventListener( 'click', function(){showString()} );
+		sandBtn.addEventListener( 'click', function(){addString()} );
+	</script>
+</body>
+</html>

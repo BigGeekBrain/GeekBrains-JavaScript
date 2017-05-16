@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="number" id="num" placeholder="Введите число">
+    <button type="button" onclick="go()">Рассчитать</button>
+
+    <script>
+      function go(){
+        var num = document.getElementById("num").value;
+
+        if ((num > 0 && num < 10 && (num % 2) == 0)) {
+          console.log("Чётное однозначное число");
+        } else if ((num > 0 && num < 10 && (num % 2) != 0)) {
+          console.log("Нечётное однозначное число");
+        }
+
+        if ((num >= 10 && num < 100 && (num % 2) == 0)) {
+          console.log("Чётное двузначное число");
+        } else if ((num >= 10 && num < 100 && (num % 2) != 0)) {
+          console.log("Нечётное двузначное число");
+        }
+
+        if (( num >= 100 && num < 1000 && (num % 2) == 0)) {
+          console.log("Чётное трехзначное число");
+        } else if ((num >= 100 && num < 1000 && (num % 2) != 0)) {
+          console.log("Нечётное трехзначное число");
+        }
+
+        if (num < 0 || num > 999) {
+          console.log("Введите число от 1 до 999");
+        }
+      }
+    </script>
+  </body>
+</html>

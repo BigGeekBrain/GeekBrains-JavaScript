@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+            <div>
+                <input type="text" id="answer1" placeholder="Сколько будет 2 + 2 = ?">
+                <button id="check1" onclick="check1()">Проверить ответы</button>
+            </div>
+            <div>
+                <input type="text" id="answer2" placeholder="Сколько будет 3 + 3 = ?">
+                <button id="check2" onclick="check2()">Проверить ответы</button>
+            </div>
+            <div>
+                <input type="text" id="answer3" placeholder="Сколько будет 4 + 4 = ?">
+                <button id="check3" onclick="check3()">Проверить ответы</button>
+            </div>
+            <div>
+                <input type="text" id="answer4" placeholder="Сколько будет 5 + 5 = ?">
+                <button id="check4" onclick="check4()">Проверить ответы</button>
+            </div>
+        </div>
+        <button onclick="check()">Получить результат теста</button>
+        <div id="result">Здесь будет результат</div>
+        <script>
+        var answer1 = document.getElementById('answer1'),
+            answer2 = document.getElementById('answer2'),
+            answer3 = document.getElementById('answer3'),
+            answer4 = document.getElementById('answer4'),
+            resultTrue = 0,
+            resultFalse = 0;
+        function check1() {
+            var num1 = +answer1.value;
+            if (document.getElementById('check1').click = true) {
+                answer1.disabled = true;
+                if (num1 === 4) {
+                    resultTrue++;
+                } else {
+                    resultFalse++;
+                }
+            }
+        }
+        function check2() {
+            var num2 = +answer2.value;
+            if (document.getElementById('check2').click = true) {
+                answer2.disabled = true;
+                if (num2 === 6) {
+                    resultTrue++;
+                } else {
+                    resultFalse++;
+                }
+            }
+        }
+        function check3() {
+            var num3 = +answer3.value;
+            if (document.getElementById('check3').click = true) {
+                answer3.disabled = true;
+                if (num3 === 8) {
+                    resultTrue++;
+                } else {
+                    resultFalse++;
+                }
+            }
+        }
+        function check4() {
+            var num4 = +answer4.value;
+            if (document.getElementById('check4').click = true) {
+                answer4.disabled = true;
+                if (num4 === 10) {
+                    resultTrue++;
+                } else {
+                    resultFalse++;
+                }
+            }
+        }
+        function check() {
+            var result = document.getElementById('result');
+            result.innerHTML = '<p>Количество правильных ответов : ' + resultTrue + '<br>';
+            result.innerHTML += 'Количество неправильных ответов: ' + resultFalse;
+        }
+        </script>
+  </body>
+</html>

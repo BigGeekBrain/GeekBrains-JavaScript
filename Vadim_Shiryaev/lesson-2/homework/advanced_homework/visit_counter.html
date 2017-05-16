@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>visit_counter</title>
+	<style>
+		input {
+			width: 180px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+			margin-left: 15px; 
+			padding: 5px;
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 3px;
+			outline: none;
+			cursor: pointer;
+			padding: 2px 10px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#status {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			width: 400px;
+			text-align: left;
+		}
+		.status__item {
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+<h1>Задание:</h1>
+<p>8. Посетитель пробыл на сайте N секунд (сделать input[type="number"]). Если он пробыл <b>менее 2 минут</b>, считаем его посещение за отказ. Если <b>более 2 минут</b> - его визит на сайт засчитан. Если <b>от 30 минут до часа</b> - также засчитываем показатель внимательного изучения. Если <b>более 1 часа</b> - считаем, что он не закрыл вкладку и не учитываем показатель внимательного изучения. 
+Вывести в качестве результата: 
+- количество и процент визитов, 
+- количество и процент отказов,
+
+- количество и процент внимательного изучения, 
+- количество и процент незакрытых вкладок.
+В текстовое поле можно неоднократно вводить время посещения и счётчики не должны обнуляться</p>
+
+	<input type="number" placeholder="Введите время посещения" id="time">
+<button type="button" id="visit">Посетить</button>
+<div id="status">
+  <div class="status__item">
+    Количество посещений: <span id="visits_count_show">0</span>
+  </div>
+  <div class="status__item">
+    Количество отказов: <span id="rejects_count_show">0</span>
+  </div>
+  <div class="status__item">
+    Количество внимательных изучений: <span id="attentive_count_show">0</span>
+  </div>
+  <div class="status__item">
+    Количество незакрытых вкладок: <span id="notclosed_count_show">0</span>
+  </div>
+</div>
+
+	<script>
+
+var total_count = 0;
+
+var visits_count = 0;
+var rejects_count = 0;
+var attentive_count = 0;
+var notclosed_count = 0;
+
+// var visits_element = document.getElementById( 'visits_count' );
+// var rejects_element = document.getElementById( 'rejects_count' );
+// var attentive_element = document.getElementById( 'attentive_count' );
+// var notclosed_element = document.getElementById( 'notclosed_count' );
+
+	function addVisit( time ) {
+		total_count++;
+		if ( time < 2 ) {
+			rejects_count++;
+		} else if ( time >= 2 && time <= 60 ) {
+			visits_count++;
+		} else if ( time > 60 ) {
+			notclosed_count++;
+		}
+		if ( time >= 30 && time <= 60 ) {
+			attentive_count++;
+		}
+
+		rejects_count_show.innerHTML = rejects_count + " ( " + ( rejects_count * 100 / total_count ).toFixed(2) + " % )";
+		visits_count_show.innerHTML = visits_count + " ( " + ( visits_count * 100 / total_count ).toFixed(2) + " % )";
+		notclosed_count_show.innerHTML = notclosed_count + " ( " + ( notclosed_count * 100 / total_count ).toFixed(2) + " % )";
+		attentive_count_show.innerHTML = attentive_count + " ( " + ( attentive_count * 100 / total_count ).toFixed(2) + " % )";
+
+
+
+	}
+
+
+		var visitBtn = document.getElementById( 'visit' );
+		visitBtn.addEventListener( 'click', function(){ addVisit( +document.getElementById( 'time' ).value )});
+	</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test-game</title>
+	<style>
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#result {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			width: 150px;
+			text-align: left;
+			min-height: 40px;
+			display: none;
+		}
+		.conteiner {
+			display: flex;
+			flex-direction: column;
+		}
+		input {
+			margin: 10px auto;
+			padding: 10px;
+			width: 300px;
+			border: 2px solid #B6B6B6;
+			border-radius: 5px;
+			background: #E7E7E7;
+			text-align: center;
+		}
+		input:focus {
+			outline: none;
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 5px;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			padding: 10px;
+			margin: 10px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+	</style>
+</head>
+<body>
+<h1>Задача:</h1>
+<p>10. Сделать тест-игру из 4-х вопросов (4 текстовых поля на странице)
+- при ответе на вопрос, запретить повторный ответ
+- посчитать количество правильных и неправильных ответов</p>
+<div class="conteiner">
+	<input type="text" name="qwestion_1" id="qwestion_1" placeholder="Сколько глаз у мухи?">
+	<input type="text" name="qwestion_2" id="qwestion_2" placeholder="Какое дерево называют символом России?">
+	<input type="text" name="qwestion_3" id="qwestion_3" placeholder="Расшифровка аббревиатуры css">
+	<input type="text" name="qwestion_4" id="qwestion_4" placeholder="Какой узел нельзя развязать?">
+	<button type="button" id="check">Проверить ответы</button>
+	<div id="result"></div>
+</div>
+
+	<script>
+		var wrongs = 0;
+		var correct = 0;
+
+		var answer_qwestion_1 = document.getElementById( 'qwestion_1' );
+		var answer_qwestion_2 = document.getElementById( 'qwestion_2' );
+		var answer_qwestion_3 = document.getElementById( 'qwestion_3' );
+		var answer_qwestion_4 = document.getElementById( 'qwestion_4' );
+
+
+		var checkAnwers = function() {
+			q1 = ( answer_qwestion_1.value ).toLowerCase();
+			q2 = ( answer_qwestion_2.value ).toLowerCase();
+			q3 = ( answer_qwestion_3.value ).toLowerCase();
+			q4 = ( answer_qwestion_4.value ).toLowerCase();
+			if ( q1 == 5 || q1 === "пять" ) {
+				correct++;
+				answer_qwestion_1.style.background = '#84CB6B';
+				answer_qwestion_1.style.borderColor = 'green';
+				answer_qwestion_1.style.color = '#ffffff';
+
+			} else {
+				wrongs++;
+				answer_qwestion_1.style.background = '#E37070';
+				answer_qwestion_1.style.borderColor = '#AC362A';
+				answer_qwestion_1.style.color = '#ffffff';
+			}
+			if ( q2 === "береза" || q2 === "берёза" ) {
+				correct++;
+				answer_qwestion_2.style.background = '#84CB6B';
+				answer_qwestion_2.style.borderColor = 'green';
+				answer_qwestion_2.style.color = '#ffffff';
+			} else {
+				wrongs++;
+				answer_qwestion_2.style.background = '#E37070';
+				answer_qwestion_2.style.borderColor = '#AC362A';
+				answer_qwestion_2.style.color = '#ffffff';
+			}
+			if ( q3 === "каскадные таблицы стилей" || q3 === "cascading style sheets" ) {
+				correct++;
+				answer_qwestion_3.style.background = '#84CB6B';
+				answer_qwestion_3.style.borderColor = 'green';
+				answer_qwestion_3.style.color = '#ffffff';
+			} else {
+				wrongs++;
+				answer_qwestion_3.style.background = '#E37070';
+				answer_qwestion_3.style.borderColor = '#AC362A';
+				answer_qwestion_3.style.color = '#ffffff';
+			}
+			if ( q4 === "железнодорожный" ) {
+				correct++;
+				answer_qwestion_4.style.background = '#84CB6B';
+				answer_qwestion_4.style.borderColor = 'green';
+				answer_qwestion_4.style.color = '#ffffff';
+			} else {
+				wrongs++;
+				answer_qwestion_4.style.background = '#E37070';
+				answer_qwestion_4.style.borderColor = '#AC362A';
+				answer_qwestion_4.style.color = '#ffffff';
+			}
+
+			qwestion_1.disabled = true;
+			qwestion_2.disabled = true;
+			qwestion_3.disabled = true;
+			qwestion_4.disabled = true;
+			check.disabled = true;
+
+			result.style.display = 'inline-block';
+			result.innerHTML = "Верных ответов: " + correct + '\r' + " Неверных ответов: " + wrongs;
+		}
+
+		var checkBtn = document.getElementById( 'check' );
+		checkBtn.addEventListener( 'click', checkAnwers );
+	</script>
+</body>
+</html>

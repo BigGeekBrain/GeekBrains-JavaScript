@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>number_discription</title>
+	<style>
+		input {
+			width: 170px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+			margin-left: 15px; 
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 3px;
+			outline: none;
+			cursor: pointer;
+			padding: 2px 10px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#result {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			width: 240px;
+			text-align: center;
+			min-height: 20px;
+		}
+	</style>
+</head>
+<body>
+<h1>Задача:</h1>
+<p>7. Дано целое число, лежащее в диапазоне 1–999. Вывести его строку-описание вида «четное двузначное число», «нечетное трехзначное число» и т. д.</p>
+	<input type="text" id="number" placeholder="Введите число от 1 до 999">
+	<button type="button" id="discriptNum"> Вывести структуру-описание </button>
+	<div id="result"></div>
+	<script>
+		function discriptionNumber ( number ) {
+			if ( number > 999 ) {
+				result.innerHTML = number + " - вы ввели слишком большое число";
+			} else if ( number > 99 && number < 1000 ) {
+				if ( number % 2 === 0 ) {
+					result.innerHTML = number + " - четное трехзначное число";
+				} else {
+					result.innerHTML = number + " - нечетное трехзначное число";
+				}
+			} else if ( number > 9 && number < 100 ) {
+				if ( number % 2 === 0 ) {
+					result.innerHTML = number + " - четное двузначное число";
+				} else {
+					result.innerHTML = number + " - нечетное двузначное число";
+				}
+			} else if ( number > 0 && number < 10 ) {
+				if ( number % 2 === 0 ) {
+					result.innerHTML = number + " - четное однозначное число";
+				} else {
+					result.innerHTML = number + " - нечетное однозначное число";
+				}
+			} else if ( number === 0 ) {
+				result.innerHTML = number + " - ноль";
+			}
+		}
+
+		var discript = document.getElementById( 'discriptNum' );
+		discript.addEventListener( 'click', function(){ discriptionNumber( +document.getElementById( 'number' ).value )});
+	</script>
+</body>
+</html>

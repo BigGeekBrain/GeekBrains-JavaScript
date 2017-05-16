@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>average</title>
+	<style>
+		input {
+			width: 70px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		div {
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			display: inline-block;
+			min-height: 15px;
+			min-width: 100px;
+			margin: 10px;
+			padding: 5px;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 3px;
+			outline: none;
+			cursor: pointer;
+			padding: 2px 10px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+	</style>
+</head>
+<body>
+<h1>Задача:</h1>
+<p>5. В 3 поля на странице можно ввести числа. Задача - найти среднее число между ними (число, расположенное между наименьшим и наибольшим).</p>
+	<input type="text" name="firstNumber" id="firstNumber" placeholder="a">
+	<input type="text" name="secondNumber" id="secondNumber" placeholder="b">
+	<input type="text" name="thirdNumber" id="thirdNumber" placeholder="c">
+	<button type="button" onclick="average()">Узнать результат</button>
+	<br>
+	<div id="showAverage"></div>
+	<script>
+
+		function average() {
+			var a = +document.getElementById('firstNumber').value;
+			var b = +document.getElementById('secondNumber').value;
+			var c = +document.getElementById('thirdNumber').value;
+			var aver = ( a + b + c ) / 3;
+			showAverage.innerHTML = "среднее чисело между -------- " + a + " | " + b + " | " + c + " -------- это " + aver;
+		}
+	</script>
+</body>
+</html>

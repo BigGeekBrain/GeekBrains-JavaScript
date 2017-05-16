@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="number" id="num" placeholder="Введите время в секундах.">
+    <button type="button" onclick="visit()">Рассчитать</button>
+    <div>
+      Колличество визитов <span id="visits_count">0</span>
+    </div>
+
+    <div>
+      Колличество отказов <span id="rejected_count">0</span>
+    </div>
+
+    <div>
+      Колличество внимательного изучения <span id="attention_count">0</span>
+    </div>
+
+    <div>
+      Колличество не закрытых вкладок <span id="not_close_count">0</span>
+    </div>
+
+    <script>
+    var total_count = 0,
+	visits_count = 0,
+	rejected_count = 0,
+  attention_count = 0,
+  not_close_count = 0,
+  visits_element = document.getElementById( 'visits_count' ),
+  rejects_element = document.getElementById( 'rejected_count' ),
+  attention_element = document.getElementById( 'attention_count' ),
+  not_close_element = document.getElementById( 'not_close_count' );
+
+function visit() {
+	total_count++;
+  var num = +document.getElementById( 'num' ).value;
+
+  if (num < 10) {
+  	rejected_count++;
+  }
+  else {
+  	visits_count++;
+  }
+
+  if (num > 10 && num <= 3600) {
+    attention_count++;
+  }else if (num > 3600) {
+    not_close_count++;
+  }
+
+  visits_element.innerHTML = visits_count + ' (' + ( visits_count * 100 / total_count ).toFixed( 2 ) + '%)';
+  rejects_element.innerHTML = rejected_count + ' (' + ( rejected_count * 100 / total_count ).toFixed( 2 ) + '%)';
+  attention_element.innerHTML = attention_count + ' (' + ( attention_count * 100 / total_count ).toFixed( 2 ) + '%)';
+  not_close_element.innerHTML = not_close_count + ' (' + ( not_close_count * 100 / total_count ).toFixed( 2 ) + '%)';
+}
+    </script>
+  </body>
+</html>

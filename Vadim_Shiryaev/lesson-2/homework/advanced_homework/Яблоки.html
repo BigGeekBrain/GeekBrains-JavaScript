@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Яблоки</title>
+	<style>
+		input {
+			width: 130px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		div {
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			display: inline-block;
+			min-height: 15px;
+			min-width: 100px;
+			margin: 10px;
+			padding: 5px;
+		}
+		form {
+			display: inline-block;
+		}
+		ul{
+			padding-left: 0px;
+		}
+		li {
+			border: 2px solid #140264;
+			border-radius: 3px;
+			min-height: 15px;
+			min-width: 100px;
+			margin: 10px;
+			margin-bottom: 20px;
+			padding: 10px;
+			list-style-type: none; 
+		}
+		.conteiner {
+			width: 500px;
+			display: none;
+			flex-direction: column;
+		}
+		#result {
+			display: none;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 3px;
+			outline: none;
+			cursor: pointer;
+			padding: 2px 10px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+	</style>
+</head>
+<body>
+<h1>Задание:</h1>
+<p>4. Дано:
+У Пети N яблок. У Маши M яблок. У Димы 8.
+Задача:
+- Если Петя видит, что у него меньше яблок, чем у Маши, он с боем отбивает половину её яблок.
+- Дима работает в Фонде Борьбы с Шовинизмом и если замечает, что у Маши осталось меньше 5 яблок,
+отдаёт ей 2
+- Дима идёт к Пете, но оказывается, что за время дороги Петя съедает часть яблок ( максимум 7, если столько у него есть; если меньше 7 - то все ). 
+- Дима конфискует у Пети 10 яблок, если они у него в наличии. Если у Пети меньше 10 яблок, Дима не забирает у него яблоки и идёт к Маше, заподозрив её в даче ложных показаний и забирает у неё свои 2 яблока.
+Сколько у кого яблок?</p>
+<form>
+	<fieldset>
+		<legend>Введите количество яблок</legend>
+		<input type="text" name="Петя" id="Петя" placeholder="У Пети">
+		<input type="text" name="Маша" id="Маша" placeholder="У Маши">
+		<input type="text" name="Дима" id="Дима" placeholder="У Димы - 8 яблок" disabled>
+		<button type="button" id="btn" onclick="countApples()">Запустить хаос</button>
+	</fieldset>
+</form>
+<br>
+<div class="conteiner" id="conteiner">
+	<ul>
+		<li id="s_1"></li>
+		<li id="s_2"></li>
+		<li id="s_3"></li>
+		<li id="s_4"></li>
+		<li id="s_5"></li>
+	</ul>
+</div>	
+<br>
+<form id="result">
+	<fieldset>
+		<legend>Теперь у</legend>
+		<div id="Petya"></div>
+		<div id="Masha"></div>
+		<div id="Dima"></div>
+	</fieldset>
+</form>
+	<script>
+		function eatApples( min, max ) {
+			return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+		}
+
+		function countApples ( N, M ) {
+			N = +document.getElementById('Петя').value;
+			M = +document.getElementById('Маша').value;
+			D = 8;
+			if ( N < M ) {
+				N += M / 2;
+				M /= 2;
+				console.log( "Петя забрал у Маши половину яблок" );
+				s_1.innerHTML = "Петя забрал у Маши половину яблок";
+			}
+			if ( M < 5 ) {
+				M += 2;
+				D -= 2;
+				console.log( "Дима отдал Маше 2 яблока" );
+				s_2.innerHTML = "Дима отдал Маше 2 яблока";
+			}
+			var N_eat = eatApples( 0, 7 );
+			if ( N >= N_eat ) {
+				N -= N_eat;
+				console.log( "по пути Петя съедает яблоки в количестве " + N_eat + "шт." );
+				s_3.innerHTML = "по пути Петя съедает яблоки в количестве " + N_eat + "шт.";
+			} else if ( N < N_eat )  {
+				N = 0;
+				console.log( "Петя съел все свои яблоки" );
+				s_3.innerHTML = "по пути Петя съедает яблоки в количестве " + N_eat + "шт.";
+			}
+			console.log( "Теперь у Пети " + N + " Яблок" );
+			s_4.innerHTML = "Теперь у Пети " + N + " Яблок";
+			if ( N > 10 ) {
+				N -= 10;
+				D += 10;
+				console.log( "Дима забирает 10 яблок у Пети" );
+				s_5.innerHTML = "Дима забирает 10 яблок у Пети";
+			} else if ( M >= 2 ) {
+				M -= 2;
+				D += 2;
+				console.log( "Дима забирает 2 яблока у Маши" );
+				s_5.innerHTML = "Дима забирает 2 яблока у Маши";
+			} else {
+				D += M;
+				M = 0;
+				console.log( "Дима заьирает все яблоки Маши" );
+				s_5.innerHTML = "Дима забирает все яблоки Маши";
+			}
+			Petya.innerHTML = "Пети " + N + " Яблок";
+			Masha.innerHTML = "Маши " + M + " Яблок";
+			Dima.innerHTML = "Димы " + D + " Яблок";
+			if ( document.getElementById( 'btn' ).click = true ) {
+				conteiner.style.display = 'flex';
+				result.style.display = 'inline-block';
+			}
+		}
+		
+	</script>
+</body>
+</html>

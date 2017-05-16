@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      div {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="text" placeholder="Введите текст">
+    <button type="button" onclick="go()">Отправить</button>
+    <button type="button" onclick="out()">Предпросмотр</button>
+
+    <div id="out_text"></div>
+    <script>
+    var savetext = "";
+    var br = document.createElement('br');
+      function go(){
+        var text = document.getElementById("text").value;
+        savetext += (text + "<br>");
+
+        console.log(savetext);
+      }
+
+      function out() {
+        var out_text = document.getElementById("out_text");
+        out_text.innerHTML = savetext;
+      }
+    </script>
+  </body>
+</html>
