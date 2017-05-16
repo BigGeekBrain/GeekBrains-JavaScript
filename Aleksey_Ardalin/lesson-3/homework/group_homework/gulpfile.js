@@ -23,7 +23,7 @@ var imgopt = require('gulp-image-optimization');
 
 //   return run();
 // });
-
+ 
 
 
 // обрабатывает шаблон сайта в pug

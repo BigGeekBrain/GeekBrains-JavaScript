@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>js</title>
+</head>
+
+<body>
+  <script>
+  //-обьявить массив который будет наполнен
+  var massiv = [];
+  console.log(massiv);
+
+  //- создать генератор случайного числа n = от 1 до 10
+  var n = Math.round(Math.random() * (10 - 1) + 1);
+  console.log(n);
+
+  //- создать цикл от 1 до n
+  for (var i = n; i--;) {
+    //- наполнить массив в цикле числами от 0 до 1000
+    massiv.push(Math.round(Math.random() * 1000));
+  	console.log(massiv);
+  }
+  document.write(massiv.join(", ") + '<br><br>');
+
+  //- создать цикл который пробежит по созданному массиву и наполнит его корнями
+  var massivNew = [];
+  var massivA = [];
+  for (var p = 0; p < massiv.length; p++) {
+    massivA[p] = Math.sqrt(massiv[p]);
+    console.log(massivA);
+    massivNew[p] = Math.round(Math.sqrt(massiv[p]), -1);
+    console.log(massivNew);
+  }
+  document.write(massivA.join(", ") + '<br><br>');
+  document.write(massivNew.join(", "));
+  </script>
+</body>
+
+</html>
