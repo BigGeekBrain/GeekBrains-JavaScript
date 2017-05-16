@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+	
+	var newObj = {
+		units: 0,
+		ten: 0,
+		hundreds: 0,
+		result: function( num ) {
+			var mas = [],
+				mas = String(num).split( '' );
+
+			this.units = mas[2],
+			this.ten = mas[1],
+			this.hundreds = mas[0];
+
+			console.log( mas );
+			
+			alert('Сотни: ' + this.hundreds + ' Десятки: ' + this.ten + ' Единицы: ' + this.units );
+			
+		}
+
+	};
+
+	newObj.result(prompt ( 'Введите число' ) );
+	console.log( newObj );
+
+	
+
+	</script>
+
+</body>
+</html>
