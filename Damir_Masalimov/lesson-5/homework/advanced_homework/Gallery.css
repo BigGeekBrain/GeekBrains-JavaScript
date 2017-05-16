@@ -1,0 +1,60 @@
+button {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+.container {
+	width: 1000px;
+	height: 800px;
+	background: lightgrey;
+	margin: auto;
+	position: relative;
+	border: 1px solid brown;
+	border-radius: 5px;
+}
+
+.main-image {
+	width: 800px;
+	height: 600px;
+	background: grey;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.subcontainer {
+	width: 900px;
+	font-size: 0;
+	margin: auto;
+}
+
+.image {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 80px;
+	height: 60px;
+	background: red;
+	margin: 10px;
+	border: 1px solid grey;
+	border-radius: 2px;
+	opacity: 0.5;
+}
+
+.button {
+	margin-top: 10px;
+	box-sizing: border-box;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background: grey;
+}
+.text {
+	margin-top: 10px;
+	width: 800px;
+	height: 50px;
+	background: green;
+}
+
+.image:hover {
+	opacity: 1;
+}
