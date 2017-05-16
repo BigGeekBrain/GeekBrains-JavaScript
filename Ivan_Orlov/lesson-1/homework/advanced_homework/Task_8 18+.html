@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>Введите ко-во полных лет</p>
+	<form action="" method="POST">
+		<input type="text" id="age">
+		<button type="button" id="sab">Войти</button>
+	</form>
+
+	<script>
+		var age = document.getElementById('age');
+		var but = document.getElementById('sab');
+
+		but.onclick = function(){
+
+			if(age.value < 18 && age.value != '' ){
+				alert('Вы входите в закрытый раздел сайта');
+			}
+			else if( age.value >= 18){
+				alert('Заходи гость дорогой');
+			}
+			else {
+				alert('Введите число');
+			}
+			return age.value = ''; // Отчистка поля
+		}
+	</script>
+</body>
+</html>
