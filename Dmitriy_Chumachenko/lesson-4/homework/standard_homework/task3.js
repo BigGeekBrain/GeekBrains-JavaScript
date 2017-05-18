@@ -25,6 +25,7 @@ if (accept == 'y') {
     var answer_2 = new Answer ( question_2 );
     correct_answer_2.compare( answer_2 );
     
+    window.onload = Answer;
     
 } else {
     alert ('Жаль!');
