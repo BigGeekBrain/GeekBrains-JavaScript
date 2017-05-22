@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My page</title>
+</head>
+<body>
+    Введите число от 0 до 999:
+<input type="text" id="input">
+<br>
+<button type="button" onClick="check()">
+ Проверка</button>
+<div class="appendHere"></div>
+
+  <script>
+var inputNumber = document.getElementById("input");
+
+function check(){
+ if ( inputNumber.value > 0 && inputNumber.value < 999 ){
+	var number = String(inputNumber.value);
+    var arr = number.split('');
+	//console.log(arr);
+  var newArr = {
+  0: arr[2],
+  1: arr[1],
+  2: arr[0]
+  }
+  //console.log(newArr);
+ var content;
+
+	if ( newArr[0] == undefined && newArr[1] == undefined ) {
+  		content = 'единицы:' + newArr[2];
+  }
+  else if (  newArr[0] == undefined ) {
+  		content = 'единицы:' + newArr[1] + ' десятки:' + newArr[2];
+  }
+  else {
+  		content = ('единицы:' + newArr[0] + ' десятки:' + newArr[1] + ' сотни:' + newArr[2]);
+  }
+
+
+  }
+  else if ( inputNumber.value > 999){
+   	var emptyArr = {};
+    contentArr = emptyArr;
+    content = 'Введите число меньше 999';
+    console.log(contentArr);
+  }
+  else {
+   	alert('Введите число от 0 до 999');
+    content = 'Введите число больше 0';
+  }
+  var newElem = document.querySelector('.appendHere'),
+	div = document.createElement('div');
+	newElem.appendChild(div);
+	div.className = "my_div";
+	div.innerHTML = content;
+  return;
+}
+  </script>
+</body>
+</html>
