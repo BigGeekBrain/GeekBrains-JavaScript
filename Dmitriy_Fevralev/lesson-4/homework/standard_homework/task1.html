@@ -10,26 +10,56 @@
 	
 	var newObj = {
 		units: 0,
-		ten: 0,
+		decade: 0,
 		hundreds: 0,
 		result: function( num ) {
-			var mas = [],
-				mas = String(num).split( '' );
+			if ( num > 999 || num < 1 ) {
+				console.log( 'Число должно быть от 1 до 999');
+				delete this.units; 
+				delete this.decade;
+				delete this.hundreds;
+				delete this.result;
+				console.log( newObj );
+			} else if ( num >= 1 && num < 10 ) {
+				var mas = [],
+					mas = String(num).split( '' );
 
-			this.units = mas[2],
-			this.ten = mas[1],
-			this.hundreds = mas[0];
+				this.units = mas[0];
+				
+				console.log( mas );
+			
+				console.log('Сотни: ' + this.hundreds + ' Десятки: ' + this.decade + ' Единицы: ' + this.units );	
 
-			console.log( mas );
+			} else if ( num >= 10 && num < 100 ) {
+				var mas = [],
+					mas = String(num).split( '' );
+
+				this.units = mas[1];
+				this.decade = mas[0];
+				
+
+				console.log( mas );
 			
-			alert('Сотни: ' + this.hundreds + ' Десятки: ' + this.ten + ' Единицы: ' + this.units );
+				console.log('Сотни: ' + this.hundreds + ' Десятки: ' + this.decade + ' Единицы: ' + this.units );			
+
+			} else if ( num >= 100 && num < 1000 ) {
+				var mas = [],
+					mas = String(num).split( '' );
+
+				this.units = mas[2],
+				this.decade = mas[1],
+				this.hundreds = mas[0];
+
+				console.log( mas );
 			
-		}
+				console.log('Сотни: ' + this.hundreds + ' Десятки: ' + this.decade + ' Единицы: ' + this.units );			
+			}
+		}			
 
 	};
 
 	newObj.result(prompt ( 'Введите число' ) );
-	console.log( newObj );
+	
 
 	
 

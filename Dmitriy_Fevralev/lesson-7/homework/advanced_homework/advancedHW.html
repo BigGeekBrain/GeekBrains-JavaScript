@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+// Factory Pattern
+/*		
+	function addClass( name, age, job ) {
+		var o = new Object();
+		o.name = name;
+		o.age = age;
+		o.job = job;
+		o.sayName = function() {
+			alert('Меня зовут ' + name );
+		}
+		return o;
+	}	
+
+	var Kristina = addClass('Кристина', 25, 'office manager');
+	var person2 = addClass('Dima', 26, 'programmer');
+
+	console.log(Kristina, person2);
+	console.log(Kristina.sayName());
+*/
+
+// Constructor Pattern
+/*
+
+	function Person( name, age, job ) {
+		this.name = name;
+		this.age = age;
+		this.job = job;
+		this.sayName = function() {
+			alert('Привет, меня зовут ' + this.name );
+		}
+	}
+
+	var Kristina = new Person('Kristina', 25, 'Office Manager' ),
+		Dima = new Person('Dima', 26, 'Programmer' );
+
+		console.log( Kristina, Dima );
+		console.log( Kristina.sayName() );
+*/
+
+// Prototype Pattern 1
+/*
+	function Person(){
+
+	}
+
+	Person.prototype.name = 'Kristina';
+	Person.prototype.age = 25;
+	Person.prototype.job = 'Office Manager';
+	Person.prototype.sayName = function() {
+		alert('Меня зовут ' + this.name );
+	}
+
+	var Kristina = new Person('Кристина', 25);
+	var Dima = new Person('Dima', 26, 'Programmer' );
+
+	Dima.name = 'Dmitriy';
+	delete Dima.name;
+
+	console.log(Kristina, Dima, Kristina.sayName == Dima.sayName);
+*/
+
+
+/*
+// Prototype Pattern 2 
+
+	function Person() {
+
+	}
+
+	Person.prototype = {
+		name: 'Kristina',
+		age: 25,
+		job: 'Office Manager',
+		sayName: function() {
+			alert('Меня зовут ' + this.name );
+		}
+	};
+Object.defineProperty(Person.prototype, 'constructor', {
+	enumerable: false,
+	value: Person
+});
+
+
+	var Kristina = new Person;
+
+	console.log( Kristina.sayName());
+*/
+
+/*
+// Constructor and Prototype Pattern
+
+	function Person( name, age, job ) {
+		this.name = name,
+		this.age = age,
+		this.job = job,
+		this.friends = ['Alexander', 'Elena']
+	}
+
+	Person.prototype = {
+		constructor: Person,
+		sayName: function() {
+			alert('Hello, my name is ' + this.name );
+		}
+	};
+
+	var Kristina = new Person('Кристина', 25, 'Office Manager');
+	var Dima = new Person('Дима', 26, 'Programmer');
+
+	console.log(Kristina, Dima, Kristina.sayName(), Dima.sayName());
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

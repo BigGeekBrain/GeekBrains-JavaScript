@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" class="form-search">
+            <input type="text" id="input-value">
+            <input type="button" value="SEARCH" id="search-button">
+            <input type="button" value="Add New" id="addNew">
+        </form>
+        <table class="table-shop">
+        <thead>
+            <tr class="table-rows">
+                <th class="table-head col-name">Name</th>
+                <td class="table-head count">5</td>                
+                <th class="table-head col-price">Price</th>
+                <th class="table-head col-actions">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-rows">
+                <td class="table-cell col-name">1</td>
+                <td class="table-cell count">5</td>                
+                <td class="table-cell col-price">2</td>
+                <td class="table-cell col-actions">
+                	<input type="button" value="Edit"><input type="button" value="Delete">
+                </td>
+            </tr>
+            <tr class="table-rows">
+                <td class="table-cell col-name">1</td>
+                <td class="table-cell count">5</td>                  
+                <td class="table-cell col-price">2</td>
+                <td class="table-cell col-actions">
+					<input type="button" value="Edit"><input type="button" value="Delete">
+                </td>
+            </tr>
+            <tr class="table-rows" rowspan="2">
+                <td class="table-cell col-name">1</td>
+                <td class="table-cell count">5</td>                  
+                <td class="table-cell col-price">2</td>
+                <td class="table-cell col-actions">
+                	<input type="button" value="Edit"><input type="button" value="Delete">
+                </td>
+            </tr>
+            <tr>
+            	<td id="desc" class="desc">
+            		Name: * Required field Count: Price:
+            	</td>
+            </tr>
+            <tr>
+            	<td class="table-cell col-name">Товар 4</td>
+            	<td class="table-cell count">5</td>
+            	<td class="table-cell col-price">2</td>
+            	<td class="table-cell col-actions">
+            		<input type="button" value="Add / Update">
+            	</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
