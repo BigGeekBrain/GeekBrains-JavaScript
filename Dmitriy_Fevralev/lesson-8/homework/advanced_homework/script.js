@@ -1,3 +1,3 @@
-if (true) {
-	alert('Hello!');
+if(true) {
+	console.log('Hello World');
 }
